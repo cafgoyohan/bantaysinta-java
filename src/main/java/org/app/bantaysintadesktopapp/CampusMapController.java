@@ -2,6 +2,7 @@ package org.app.bantaysintadesktopapp;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
@@ -25,6 +26,7 @@ public class CampusMapController
     public StackPane stackPane;
     public ScrollPane spMain;
     public ScrollPane spFullMap;
+    public Group groupFullMap;
     double maxZoom = 16.0;
     double minZoom = 0.0;
     int zoomLevel = 8;
@@ -119,19 +121,32 @@ public class CampusMapController
 
     public void handleFullMapClick(MouseEvent e)
     {
-        double scaleX = fullMapImage.getScaleX();
-        double scaleY = fullMapImage.getScaleY();
+        double mouseX = e.getX();
+        double mouseY = e.getY();
 
-        if (e.getButton() == MouseButton.PRIMARY && zoomLevel < maxZoom)
-        {
-            fullMapImage.setScaleX(scaleX * 1.2);
-            fullMapImage.setScaleY(scaleY * 1.2);
+        double oldScaleX = fullMapImage.getScaleX();
+        double oldScaleY = fullMapImage.getScaleY();
+
+        if (e.getButton() == MouseButton.PRIMARY && zoomLevel < maxZoom) {
+            fullMapImage.setScaleX(oldScaleX * 1.2);
+            fullMapImage.setScaleY(oldScaleY * 1.2);
             zoomLevel++;
-        } else if (e.getButton() == MouseButton.SECONDARY && zoomLevel > minZoom)
-        {
-            fullMapImage.setScaleX(scaleX / 1.2);
-            fullMapImage.setScaleY(scaleY / 1.2);
+        } else if (e.getButton() == MouseButton.SECONDARY && zoomLevel > minZoom) {
+            fullMapImage.setScaleX(oldScaleX / 1.2);
+            fullMapImage.setScaleY(oldScaleY / 1.2);
             zoomLevel--;
         }
+
+        double contentWidth = fullMapImage.getBoundsInParent().getWidth();
+        double contentHeight = fullMapImage.getBoundsInParent().getHeight();
+
+        double viewportWidth = spFullMap.getViewportBounds().getWidth();
+        double viewportHeight = spFullMap.getViewportBounds().getHeight();
+
+        double newScrollX = (mouseX / contentWidth) * (fullMapImage.getScaleX() * contentWidth - viewportWidth);
+        double newScrollY = (mouseY / contentHeight) * (fullMapImage.getScaleY() * contentHeight - viewportHeight);
+
+        spFullMap.setHvalue(newScrollX);
+        spFullMap.setVvalue(newScrollY);
     }
 }

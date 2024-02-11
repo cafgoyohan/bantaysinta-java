@@ -13,6 +13,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TextArea?>
 
+<?import javafx.scene.Group?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.app.bantaysintadesktopapp.CampusMapController"
@@ -102,9 +103,11 @@
                         prefWidth="331.2" prefHeight="525"
                         minWidth="331.2" minHeight="525"
                         maxWidth="331.2" maxHeight="525">
-                <ImageView fx:id="fullMapImage" onMouseClicked="#handleFullMapClick" styleClass="full-map-image">
-                    <Image url="@image/campus-map-full.png"/>
-                </ImageView>
+                <Group fx:id="groupFullMap">
+                    <ImageView fx:id="fullMapImage" onMouseClicked="#handleFullMapClick" styleClass="full-map-image">
+                        <Image url="@image/campus-map-full.png"/>
+                    </ImageView>
+                </Group>
             </ScrollPane>
 
         </StackPane>
