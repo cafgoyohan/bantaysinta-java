@@ -4,11 +4,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,9 +21,25 @@ public class CampusMapController
     public ImageView profileIcon;
     public ImageView backButton;
     public ImageView campusMapImage;
+    public ImageView fullMapImage;
+    public StackPane stackPane;
+    public ScrollPane spMain;
+    public ScrollPane spFullMap;
+    double maxZoom = 16.0;
+    double minZoom = 0.0;
+    int zoomLevel = 8;
+    boolean fullMapVisible = false;
 
     public void handleBackButtonClick(MouseEvent actionEvent) {
-        navigateToReturnPage();
+        if (fullMapVisible)
+        {
+            fullMapVisible = false;
+            var image = stackPane.getChildren().getLast();
+            image.setVisible(false);
+        } else
+        {
+            navigateToReturnPage();
+        }
     }
 
     @FXML
@@ -96,6 +112,26 @@ public class CampusMapController
     }
 
     public void handleCampusMapClick(MouseEvent actionEvent) {
+        fullMapVisible = true;
+        var image = stackPane.getChildren().getLast();
+        image.setVisible(true);
+    }
 
+    public void handleFullMapClick(MouseEvent e)
+    {
+        double scaleX = fullMapImage.getScaleX();
+        double scaleY = fullMapImage.getScaleY();
+
+        if (e.getButton() == MouseButton.PRIMARY && zoomLevel < maxZoom)
+        {
+            fullMapImage.setScaleX(scaleX * 1.2);
+            fullMapImage.setScaleY(scaleY * 1.2);
+            zoomLevel++;
+        } else if (e.getButton() == MouseButton.SECONDARY && zoomLevel > minZoom)
+        {
+            fullMapImage.setScaleX(scaleX / 1.2);
+            fullMapImage.setScaleY(scaleY / 1.2);
+            zoomLevel--;
+        }
     }
 }

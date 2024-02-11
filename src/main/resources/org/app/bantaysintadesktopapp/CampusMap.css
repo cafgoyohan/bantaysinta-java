@@ -48,6 +48,12 @@
     -fx-font-style: italic;
 }
 
+.full-map-image
+{
+    -fx-width: 1698;
+    -fx-height: 1275;
+}
+
 .navigation-icons
 {
     -fx-padding: 0px 0px 25px 0px;

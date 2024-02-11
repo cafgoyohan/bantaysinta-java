@@ -32,66 +32,83 @@
 
     <!-- Main Content (Form) -->
     <center>
-        <ScrollPane styleClass="scroll-pane" prefWidth="331.2" prefHeight="525" minWidth="331.2" minHeight="525" maxWidth="331.2" maxHeight="525">
-            <VBox alignment="CENTER" spacing="10" styleClass="form" maxWidth="320" maxHeight="525">
+        <StackPane fx:id="stackPane">
+            <ScrollPane fx:id="spMain" styleClass="scroll-pane"
+                        prefWidth="331.2" prefHeight="525"
+                        minWidth="331.2" minHeight="525"
+                        maxWidth="331.2" maxHeight="525">
+                <VBox alignment="CENTER" spacing="10" styleClass="form" maxWidth="320" maxHeight="525">
 
-                <VBox alignment="CENTER">
-                    <Label styleClass="section-header" text="Campus Map"/>
+                    <VBox alignment="CENTER">
+                        <Label styleClass="section-header" text="Campus Map"/>
+                    </VBox>
+
+                    <ImageView fx:id="campusMapImage" onMouseClicked="#handleCampusMapClick"
+                               styleClass="campus-map-image">
+                        <Image url="@image/campus-map.png"/>
+                        <fitWidth>242</fitWidth>
+                        <fitHeight>292</fitHeight>
+                    </ImageView>
+
+                    <Label text="Legends" styleClass="legends-label"/>
+
+                    <VBox alignment="CENTER_LEFT" styleClass="import">
+                        <Label text="1 Amphitheater" styleClass="poi-label"/>
+                        <Label text="2 Banda Kawayan, Sining Lahi Headquarters" styleClass="poi-label"/>
+                        <Label text="3 Building and Grounds Maintenance Office" styleClass="poi-label"/>
+                        <Label text="4 Catwalk" styleClass="poi-label"/>
+                        <Label text="5 Centennial Monument" styleClass="poi-label"/>
+                        <Label text="6 Charlie del Rosario Student Development Center" styleClass="poi-label"/>
+                        <Label text="7 East Gate" styleClass="poi-label"/>
+                        <Label text="8 Flag Pole" styleClass="poi-label"/>
+                        <Label text="9 Grandstand" styleClass="poi-label"/>
+                        <Label text="10 Gymnasium" styleClass="poi-label"/>
+                        <Label text="11 Interfaith Chapel" styleClass="poi-label"/>
+                        <Label text="12 Laboratory High School" styleClass="poi-label"/>
+                        <Label text="13 Lagoon" styleClass="poi-label"/>
+                        <Label text="14 Main Building – Dome" styleClass="poi-label"/>
+                        <Label text="15 Main Building - East Wing" styleClass="poi-label"/>
+                        <Label text="16 Main Building - North Wing" styleClass="poi-label"/>
+                        <Label text="17 Main Building - South Wing" styleClass="poi-label"/>
+                        <Label text="18 Main Building - West Wing" styleClass="poi-label"/>
+                        <Label text="19 Main Gate" styleClass="poi-label"/>
+                        <Label text="20 Nemesio E. Prudente Freedom Park" styleClass="poi-label"/>
+                        <Label text="21 Ninoy Aquino Library and Learning Resources Center" styleClass="poi-label"/>
+                        <Label text="22 Open Court" styleClass="poi-label"/>
+                        <Label text="23 CNFS Building" styleClass="poi-label"/>
+                        <Label text="24 Oval Open Field" styleClass="poi-label"/>
+                        <Label text="25 P.E. Building" styleClass="poi-label"/>
+                        <Label text="26 Pasig River" styleClass="poi-label"/>
+                        <Label text="27 Pasig River Ferry (Sta. Mesa Station)" styleClass="poi-label"/>
+                        <Label text="28 Access Road" styleClass="poi-label"/>
+                        <Label text="29 Public Restroom" styleClass="poi-label"/>
+                        <Label text="30 PUP Linear Park" styleClass="poi-label"/>
+                        <Label text="31 PUP Mural and the Shrine of Heroism" styleClass="poi-label"/>
+                        <Label text="32 PUP Obelisk (and the Mabini Monument)" styleClass="poi-label"/>
+                        <Label text="33 PUP Property Building and Motorpool" styleClass="poi-label"/>
+                        <Label text="34 PUP Pylon" styleClass="poi-label"/>
+                        <Label text="35 Sampaguita Building" styleClass="poi-label"/>
+                        <Label text="36 Student Pavilion" styleClass="poi-label"/>
+                        <Label text="37 Swimming Pool" styleClass="poi-label"/>
+                        <Label text="38 Tennis Open Court" styleClass="poi-label"/>
+                        <Label text="39 Water Tank" styleClass="poi-label"/>
+                        <Label text="40 West Gate" styleClass="poi-label"/>
+                    </VBox>
+
                 </VBox>
+            </ScrollPane>
 
-                <ImageView fx:id="campusMapImage" onMouseClicked="#handleCampusMapClick" styleClass="campus-map-image">
-                    <Image url="@image/campus-map.png"/>
-                    <fitWidth>242</fitWidth>
-                    <fitHeight>292</fitHeight>
+            <ScrollPane fx:id="spFullMap" visible="false" styleClass="scroll-pane"
+                        prefWidth="331.2" prefHeight="525"
+                        minWidth="331.2" minHeight="525"
+                        maxWidth="331.2" maxHeight="525">
+                <ImageView fx:id="fullMapImage" onMouseClicked="#handleFullMapClick" styleClass="full-map-image">
+                    <Image url="@image/campus-map-full.png"/>
                 </ImageView>
+            </ScrollPane>
 
-                <Label text="Legends" styleClass="legends-label"/>
+        </StackPane>
 
-                <VBox alignment="CENTER_LEFT" styleClass="import">
-                    <Label text="1 Amphitheater" styleClass="poi-label"/>
-                    <Label text="2 Banda Kawayan, Sining Lahi Headquarters" styleClass="poi-label"/>
-                    <Label text="3 Building and Grounds Maintenance Office" styleClass="poi-label"/>
-                    <Label text="4 Catwalk" styleClass="poi-label"/>
-                    <Label text="5 Centennial Monument" styleClass="poi-label"/>
-                    <Label text="6 Charlie del Rosario Student Development Center" styleClass="poi-label"/>
-                    <Label text="7 East Gate" styleClass="poi-label"/>
-                    <Label text="8 Flag Pole" styleClass="poi-label"/>
-                    <Label text="9 Grandstand" styleClass="poi-label"/>
-                    <Label text="10 Gymnasium" styleClass="poi-label"/>
-                    <Label text="11 Interfaith Chapel" styleClass="poi-label"/>
-                    <Label text="12 Laboratory High School" styleClass="poi-label"/>
-                    <Label text="13 Lagoon" styleClass="poi-label"/>
-                    <Label text="14 Main Building – Dome" styleClass="poi-label"/>
-                    <Label text="15 Main Building - East Wing" styleClass="poi-label"/>
-                    <Label text="16 Main Building - North Wing" styleClass="poi-label"/>
-                    <Label text="17 Main Building - South Wing" styleClass="poi-label"/>
-                    <Label text="18 Main Building - West Wing" styleClass="poi-label"/>
-                    <Label text="19 Main Gate" styleClass="poi-label"/>
-                    <Label text="20 Nemesio E. Prudente Freedom Park" styleClass="poi-label"/>
-                    <Label text="21 Ninoy Aquino Library and Learning Resources Center" styleClass="poi-label"/>
-                    <Label text="22 Open Court" styleClass="poi-label"/>
-                    <Label text="23 CNFS Building" styleClass="poi-label"/>
-                    <Label text="24 Oval Open Field" styleClass="poi-label"/>
-                    <Label text="25 P.E. Building" styleClass="poi-label"/>
-                    <Label text="26 Pasig River" styleClass="poi-label"/>
-                    <Label text="27 Pasig River Ferry (Sta. Mesa Station)" styleClass="poi-label"/>
-                    <Label text="28 Access Road" styleClass="poi-label"/>
-                    <Label text="29 Public Restroom" styleClass="poi-label"/>
-                    <Label text="30 PUP Linear Park" styleClass="poi-label"/>
-                    <Label text="31 PUP Mural and the Shrine of Heroism" styleClass="poi-label"/>
-                    <Label text="32 PUP Obelisk (and the Mabini Monument)" styleClass="poi-label"/>
-                    <Label text="33 PUP Property Building and Motorpool" styleClass="poi-label"/>
-                    <Label text="34 PUP Pylon" styleClass="poi-label"/>
-                    <Label text="35 Sampaguita Building" styleClass="poi-label"/>
-                    <Label text="36 Student Pavilion" styleClass="poi-label"/>
-                    <Label text="37 Swimming Pool" styleClass="poi-label"/>
-                    <Label text="38 Tennis Open Court" styleClass="poi-label"/>
-                    <Label text="39 Water Tank" styleClass="poi-label"/>
-                    <Label text="40 West Gate" styleClass="poi-label"/>
-                </VBox>
-
-            </VBox>
-        </ScrollPane>
     </center>
 
     <!-- Navigation Icons -->
