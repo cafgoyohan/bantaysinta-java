@@ -9,6 +9,9 @@ module org.app.bantaysintadesktopapp {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.sql;
+    requires java.desktop;
+    requires mysql.connector.j;
 
     opens org.app.bantaysintadesktopapp to javafx.fxml;
     exports org.app.bantaysintadesktopapp;

@@ -1,0 +1,62 @@
+.stack-pane {
+    -fx-background-image: url('image/home.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+
+.top-section .greeting-text,
+.top-section .sub-heading {
+    -fx-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-family: "Helvetica";
+}
+
+.top-section .sub-heading {
+    -fx-font-weight: bold;
+}
+
+.date-section .date-text {
+    -fx-fill: #EDD499;
+    -fx-font-size: 20px;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+}
+
+.date-section {
+    -fx-padding: 15px 10px 10px 0px;
+}
+
+.top-section {
+    -fx-padding: 40px 10px 10px 20px;
+}
+
+.main-content {
+    -fx-alignment: center;
+    -fx-padding: 45px 0px 10px 40px;
+}
+
+.main-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-border-color: transparent;
+    -fx-padding: 15px 0px 0px 0px;
+}
+
+.main-button:hover {
+    -fx-text-fill: #EDD499;
+    -fx-background-color: transparent;
+}
+
+.navigation-icons
+{
+    -fx-padding: -49px 20px 25px 20px;
+}
+
+.navigation-icons .navicon:hover
+{
+    -fx-effect: dropshadow(three-pass-box, #BDADAD, 7, 0, 0, 0);
+}

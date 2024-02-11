@@ -1,0 +1,113 @@
+.stack-pane {
+    -fx-background-image: url('image/report2.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.header
+{
+    -fx-padding: 58px 0px 0px 25px;
+}
+
+.header .back-button:hover
+{
+    -fx-effect: dropshadow(three-pass-box, #000, 7, 0, 0, 0);
+}
+
+.scroll-pane
+{
+    -fx-background-color: transparent;
+}
+
+.section
+{
+    -fx-padding: 10px 0px 0px 0x;
+}
+
+.section-header {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #810101;
+    -fx-padding: 10px 0px 0px 10px;
+}
+
+.section-header2 {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #810101;
+    -fx-padding: -10px 0px 5px 10px;
+}
+
+.report-form
+{
+    -fx-padding: 10px 20px 10px 20px;
+}
+
+.report-label
+{
+    -fx-font-size: 12px;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-text-fill: #810101;
+}
+
+.report-content
+{
+    -fx-font-size: 12px;
+    -fx-font-family: "Helvetica";
+    -fx-text-fill: #888888;
+}
+
+.check-box
+{
+    -fx-background-color: transparent;
+    -fx-text-fill: #888888;
+    -fx-font-size: 10px;
+    -fx-font-family: "Helvetica";
+    -fx-border-color: transparent;
+}
+
+.submit
+{
+    -fx-padding: 30px 0px 0px 15px;
+    -fx-background-color: transparent;
+}
+.submit-button
+{
+    -fx-background-color: #810101;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-padding: 4px 50px 4px 50px;
+    -fx-border-color: #810101;
+    -fx-border-width: 3px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+}
+
+.submit-button:hover
+{
+    -fx-background-color: #4B0202;
+    -fx-border-color: #4B0202;
+}
+
+.submit-button:pressed
+{
+    -fx-background-color: #f6f6f6;
+    -fx-text-fill: #4B0202
+}
+
+.scroll-pane
+{
+}
+
+.navigation-icons
+{
+    -fx-padding: 0px 0px 25px 0px;
+}
+
+.navigation-icons .navicon:hover
+{
+    -fx-effect: dropshadow(three-pass-box, #000, 7, 0, 0, 0);
+}

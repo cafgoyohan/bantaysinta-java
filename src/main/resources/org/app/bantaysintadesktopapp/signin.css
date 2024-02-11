@@ -1,0 +1,82 @@
+.stack-pane
+{
+    -fx-background-image: url('image/login.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.text-field {
+    -fx-background-color: #DADADA;
+    -fx-font-size: 13px;
+    -fx-font-family: "Helvetica";
+    -fx-pref-width: 280px;
+    -fx-max-width: 280px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-padding: 10px;
+}
+
+.pass-field {
+    -fx-background-color: #DADADA;
+    -fx-padding:10px;
+    -fx-font-size: 13px;
+    -fx-font-family: "Helvetica";
+}
+
+.signin-button
+{
+    -fx-background-color: #810101;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-padding: 4px 50px 4px 50px;
+    -fx-border-color: #810101;
+    -fx-border-width: 3px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+}
+
+.signin-button:hover
+{
+    -fx-background-color: #4B0202;
+    -fx-border-color: #4B0202;
+}
+
+.signin-button:pressed
+{
+    -fx-background-color: #f6f6f6;
+    -fx-text-fill: #4B0202
+}
+
+.hyperlink
+{
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-font-size: 10px;
+    -fx-text-fill: #4D4C4C;
+}
+
+.terms-label1
+{
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4D4C4C;
+    -fx-padding: 30px 0px -10px 0px;
+}
+
+.terms-label2
+{
+    -fx-font-family: "Helvetica";
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4D4C4C;
+}
+
+.error-label {
+    -fx-text-fill: red;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}

@@ -1,0 +1,57 @@
+.stack-pane
+{
+    -fx-background-image: url('image/success.png');
+    -fx-background-size: cover; /* Adjust the size of the background image */
+    -fx-background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+
+.header
+{
+    -fx-padding: 58px 0px 0px 25px;
+}
+
+.header .back-button:hover
+{
+    -fx-effect: dropshadow(three-pass-box, #000, 7, 0, 0, 0);
+}
+
+.button-container
+{
+    -fx-padding: 0px 0px 60px 0px;
+}
+
+.return-button
+{
+    -fx-background-color: #810101;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-padding: 5px 30px;
+    -fx-border-color: #810101;
+    -fx-border-width: 3px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+}
+
+.return-button:hover
+{
+    -fx-background-color: #4B0202;
+    -fx-border-color: #4B0202;
+}
+
+.return-button:pressed
+{
+    -fx-background-color: #f6f6f6;
+    -fx-text-fill: #4B0202
+}
+
+.navigation-icons
+{
+    -fx-padding: 0px 0px 25px 0px;
+}
+
+.navigation-icons .navicon:hover
+{
+    -fx-effect: dropshadow(three-pass-box, #000, 7, 0, 0, 0);
+}

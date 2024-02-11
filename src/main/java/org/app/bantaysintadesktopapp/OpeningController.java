@@ -1,17 +1,17 @@
 package org.app.bantaysintadesktopapp;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.image.Image;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 import javafx.scene.layout.StackPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
-import javafx.scene.layout.BackgroundPosition;
-import javafx.scene.layout.BackgroundRepeat;
-import javafx.scene.layout.BackgroundSize;
 
+import java.io.IOException;
 import java.net.URL;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class OpeningController implements Initializable {
@@ -20,25 +20,30 @@ public class OpeningController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Load background image
-        URL imageUrl = getClass().getResource("/img/opening.png");
-        if (imageUrl != null) {
-            Image backgroundImage = new Image(imageUrl.toExternalForm());
+    }
 
-            // Set background properties
-            BackgroundImage background = new BackgroundImage(
-                    backgroundImage,
-                    BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT,
-                    BackgroundPosition.DEFAULT,
-                    BackgroundSize.DEFAULT
-            );
+    @FXML
+    private void openSignInPage(ActionEvent event) throws IOException {
+        // Load the SignInPage.fxml file
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Signin.fxml"));
+        Parent signInPageParent = loader.load();
 
-            // Apply background to StackPane
-            rootPane.setBackground(new Background(background));
-        } else {
-            System.err.println("Error: Background image not found!");
-        }
+        // Get the opening page's scene dimensions
+        Scene openingScene = rootPane.getScene();
+        double openingWidth = openingScene.getWidth();
+        double openingHeight = openingScene.getHeight();
+
+        // Create the sign-in page scene with the same dimensions
+        Scene signInPageScene = new Scene(signInPageParent, openingWidth, openingHeight);
+
+        // Get the stage information
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        // Set the new scene
+        window.setScene(signInPageScene);
+        window.show();
     }
 
 }
+
+

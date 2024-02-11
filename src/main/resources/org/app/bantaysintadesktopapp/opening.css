@@ -1,0 +1,38 @@
+.stack-pane
+{
+    -fx-background-image: url('image/opening.png');
+    -fx-background-size: cover; /* Adjust the size of the background image */
+    -fx-background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+
+.signin-button
+{
+    -fx-background-color: #810101;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-padding: 8px 30px;
+    -fx-border-color: #810101;
+    -fx-border-width: 3px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+}
+
+.button-container
+{
+    -fx-alignment: BOTTOM_CENTER;
+    -fx-padding:35px
+}
+
+.signin-button:hover
+{
+    -fx-background-color: #4B0202;
+    -fx-border-color: #4B0202;
+}
+
+.signin-button:pressed
+{
+    -fx-background-color: #f6f6f6;
+    -fx-text-fill: #4B0202
+}

@@ -1,0 +1,72 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Hyperlink?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.app.bantaysintadesktopapp.MainController"
+            styleClass="stack-pane" stylesheets="@Main.css"
+            prefWidth="331.2" prefHeight="716.8">
+
+    <!--Top Section -->
+    <VBox styleClass="top-section" BorderPane.alignment="TOP_CENTER">
+        <ImageView styleClass="profile-image">
+            <Image url="@image/juan.png"/>
+            <fitWidth>50</fitWidth>
+            <preserveRatio>true</preserveRatio>
+        </ImageView>
+        <VBox>
+            <Text fx:id="greetingText" styleClass="greeting-text"/>
+            <Text text="Have a safe and productive day!" styleClass="sub-heading"/>
+        </VBox>
+        <VBox styleClass="date-section">
+            <Text fx:id="dateText" styleClass="date-text"/>
+        </VBox>
+    </VBox>
+
+    <!-- Main Content -->
+    <center>
+        <VBox alignment="CENTER" spacing="20" styleClass="main-content">
+            <VBox spacing="10" alignment="CENTER_LEFT">
+                <Button text="Announcements" onAction="#handleAnnouncements" styleClass="main-button"/>
+                <Button text="Report an Occurrence" onAction="#handleReportOccurrence" styleClass="main-button"/>
+                <Button text="Emergency Protocols" onAction="#handleEmergencyProtocols" styleClass="main-button"/>
+                <Button text="Campus Map" onAction="#handleCampusMap" styleClass="main-button"/>
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- Navigation Icons -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="40" styleClass="navigation-icons">
+            <ImageView fx:id="homeIcon" onMouseClicked="#handleHomeClick" styleClass="navicon">
+                <Image url="@image/home-icon.png"/>
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+            <ImageView fx:id="reportIcon" onMouseClicked="#handleReportClick" styleClass="navicon">
+                <Image url="@image/report-icon.png"/>
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+            <ImageView fx:id="mapIcon" onMouseClicked="#handleMapClick" styleClass="navicon">
+                <Image url="@image/map-icon.png"/>
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+            <ImageView fx:id="profileIcon" onMouseClicked="#handleProfileClick" styleClass="navicon">
+                <Image url="@image/profile-icon.png"/>
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+        </HBox>
+    </bottom>
+
+</BorderPane>
+
+

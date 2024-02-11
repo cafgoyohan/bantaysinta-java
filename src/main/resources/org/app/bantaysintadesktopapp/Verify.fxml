@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+
+<?import javafx.scene.control.CheckBox?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.app.bantaysintadesktopapp.VerifyController"
+            styleClass="stack-pane" stylesheets="@Verify.css"
+            prefWidth="331.2" prefHeight="716.8">
+
+    <!-- Header -->
+    <top>
+        <HBox styleClass="header">
+            <ImageView fx:id="backButton" onMouseClicked="#handleBackButtonClick" styleClass="back-button">
+                <Image url="@image/back-icon.png"/>
+                <fitWidth>20</fitWidth>
+                <fitHeight>20</fitHeight>
+            </ImageView>
+        </HBox>
+    </top>
+
+    <!-- Main Content (Form) -->
+    <center>
+        <ScrollPane styleClass="scroll-pane" prefWidth="331.2" prefHeight="525"
+                    minWidth="331.2" minHeight="525" maxWidth="331.2" maxHeight="525">
+            <VBox spacing="10" styleClass="report-form" maxWidth="325" maxHeight="525">
+                <VBox alignment="CENTER" styleClass="section">
+                    <Label styleClass="section-header" text="Please verify the details"/>
+                    <Label styleClass="section-header2" text="you have entered."/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Subject:" styleClass="report-label"/>
+                    <Label styleClass="report-content" fx:id="subjectLabel"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Location:" styleClass="report-label" />
+                    <Label styleClass="report-content" fx:id="locationLabel"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Description of the occurrence:" styleClass="report-label" />
+                    <Label styleClass="report-content" fx:id="descriptionLabel"/>
+                </VBox>
+
+                <VBox spacing="5">
+                    <Label text="Supporting media:" styleClass="report-label"/>
+                    <ImageView fx:id="imageView" fitWidth="100" fitHeight="100" styleClass="image-view"/>
+                </VBox>
+
+                <CheckBox fx:id="certificationCheckbox" styleClass="check-box"
+                          text="I certify that the information provided in this incident report is true, accurate, and complete to the best of my knowledge."
+                          wrapText="true"/>
+
+                <VBox alignment="CENTER" styleClass="submit">
+                    <Button text="Submit" onAction="#handleSubmitButtonClick" styleClass="submit-button"/>
+                </VBox>
+            </VBox>
+
+        </ScrollPane>
+    </center>
+
+    <!-- Navigation Icons -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="40" styleClass="navigation-icons">
+            <ImageView fx:id="homeIcon" onMouseClicked="#handleHomeClick" styleClass="navicon">
+                <Image url="@image/home-icon2.png"/>
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+            <ImageView fx:id="reportIcon" onMouseClicked="#handleReportClick" styleClass="navicon">
+                <Image url="@image/report-icon2.png"/>
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+            <ImageView fx:id="mapIcon" onMouseClicked="#handleMapClick" styleClass="navicon">
+                <Image url="@image/map-icon2.png"/>
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+            <ImageView fx:id="profileIcon" onMouseClicked="#handleProfileClick" styleClass="navicon">
+                <Image url="@image/profile-icon2.png"/>
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+        </HBox>
+    </bottom>
+
+</BorderPane>
