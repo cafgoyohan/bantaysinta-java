@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.app.bantaysintadesktopapp.CampusMapController"
+            styleClass="stack-pane" stylesheets="@CampusMap.css"
+            prefWidth="331.2" prefHeight="716.8">
+
+    <!-- Header -->
+    <top>
+        <HBox styleClass="header">
+            <ImageView fx:id="backButton" onMouseClicked="#handleBackButtonClick" styleClass="back-button">
+                <Image url="@image/back-icon.png"/>
+                <fitWidth>20</fitWidth>
+                <fitHeight>20</fitHeight>
+            </ImageView>
+        </HBox>
+    </top>
+
+    <!-- Main Content (Form) -->
+    <center>
+        <ScrollPane styleClass="scroll-pane" prefWidth="331.2" prefHeight="525" minWidth="331.2" minHeight="525" maxWidth="331.2" maxHeight="525">
+            <VBox alignment="CENTER" spacing="10" styleClass="form" maxWidth="320" maxHeight="525">
+
+                <VBox alignment="CENTER">
+                    <Label styleClass="section-header" text="Campus Map"/>
+                </VBox>
+
+                <ImageView fx:id="campusMapImage" onMouseClicked="#handleCampusMapClick" styleClass="campus-map-image">
+                    <Image url="@image/campus-map.png"/>
+                    <fitWidth>242</fitWidth>
+                    <fitHeight>292</fitHeight>
+                </ImageView>
+
+                <Label text="Legends" styleClass="legends-label"/>
+
+                <VBox alignment="CENTER_LEFT" styleClass="import">
+                    <Label text="1 Amphitheater" styleClass="poi-label"/>
+                    <Label text="2 Banda Kawayan, Sining Lahi Headquarters" styleClass="poi-label"/>
+                    <Label text="3 Building and Grounds Maintenance Office" styleClass="poi-label"/>
+                    <Label text="4 Catwalk" styleClass="poi-label"/>
+                    <Label text="5 Centennial Monument" styleClass="poi-label"/>
+                    <Label text="6 Charlie del Rosario Student Development Center" styleClass="poi-label"/>
+                    <Label text="7 East Gate" styleClass="poi-label"/>
+                    <Label text="8 Flag Pole" styleClass="poi-label"/>
+                    <Label text="9 Grandstand" styleClass="poi-label"/>
+                    <Label text="10 Gymnasium" styleClass="poi-label"/>
+                    <Label text="11 Interfaith Chapel" styleClass="poi-label"/>
+                    <Label text="12 Laboratory High School" styleClass="poi-label"/>
+                    <Label text="13 Lagoon" styleClass="poi-label"/>
+                    <Label text="14 Main Building – Dome" styleClass="poi-label"/>
+                    <Label text="15 Main Building - East Wing" styleClass="poi-label"/>
+                    <Label text="16 Main Building - North Wing" styleClass="poi-label"/>
+                    <Label text="17 Main Building - South Wing" styleClass="poi-label"/>
+                    <Label text="18 Main Building - West Wing" styleClass="poi-label"/>
+                    <Label text="19 Main Gate" styleClass="poi-label"/>
+                    <Label text="20 Nemesio E. Prudente Freedom Park" styleClass="poi-label"/>
+                    <Label text="21 Ninoy Aquino Library and Learning Resources Center" styleClass="poi-label"/>
+                    <Label text="22 Open Court" styleClass="poi-label"/>
+                    <Label text="23 CNFS Building" styleClass="poi-label"/>
+                    <Label text="24 Oval Open Field" styleClass="poi-label"/>
+                    <Label text="25 P.E. Building" styleClass="poi-label"/>
+                    <Label text="26 Pasig River" styleClass="poi-label"/>
+                    <Label text="27 Pasig River Ferry (Sta. Mesa Station)" styleClass="poi-label"/>
+                    <Label text="28 Access Road" styleClass="poi-label"/>
+                    <Label text="29 Public Restroom" styleClass="poi-label"/>
+                    <Label text="30 PUP Linear Park" styleClass="poi-label"/>
+                    <Label text="31 PUP Mural and the Shrine of Heroism" styleClass="poi-label"/>
+                    <Label text="32 PUP Obelisk (and the Mabini Monument)" styleClass="poi-label"/>
+                    <Label text="33 PUP Property Building and Motorpool" styleClass="poi-label"/>
+                    <Label text="34 PUP Pylon" styleClass="poi-label"/>
+                    <Label text="35 Sampaguita Building" styleClass="poi-label"/>
+                    <Label text="36 Student Pavilion" styleClass="poi-label"/>
+                    <Label text="37 Swimming Pool" styleClass="poi-label"/>
+                    <Label text="38 Tennis Open Court" styleClass="poi-label"/>
+                    <Label text="39 Water Tank" styleClass="poi-label"/>
+                    <Label text="40 West Gate" styleClass="poi-label"/>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <!-- Navigation Icons -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="40" styleClass="navigation-icons">
+            <ImageView fx:id="homeIcon" onMouseClicked="#handleHomeClick" styleClass="navicon">
+                <Image url="@image/home-icon2.png"/>
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+            <ImageView fx:id="reportIcon" onMouseClicked="#handleReportClick" styleClass="navicon">
+                <Image url="@image/report-icon2.png"/>
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+            <ImageView fx:id="mapIcon" onMouseClicked="#handleMapClick" styleClass="navicon">
+                <Image url="@image/map-icon2.png"/>
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+            <ImageView fx:id="profileIcon" onMouseClicked="#handleProfileClick" styleClass="navicon">
+                <Image url="@image/profile-icon2.png"/>
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+        </HBox>
+    </bottom>
+
+</BorderPane>

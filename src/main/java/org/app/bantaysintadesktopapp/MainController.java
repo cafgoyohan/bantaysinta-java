@@ -91,6 +91,7 @@ public class MainController {
     private void handleMapClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(mapIcon); // Change size of the clicked icon
+        navigateToCampusMapPage(); // Navigate to Campus Map page
         System.out.println("Map icon clicked");
     }
 
@@ -135,6 +136,26 @@ public class MainController {
             Stage reportStage = new Stage();
             reportStage.setScene(new Scene(root));
             reportStage.setTitle("Report Page");
+            reportStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void navigateToCampusMapPage() {
+        try {
+            // Close the main stage
+            Stage mainStage = (Stage) greetingText.getScene().getWindow();
+            mainStage.close();
+
+            // Load ReportPage.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CampusMap.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the report page stage
+            Stage reportStage = new Stage();
+            reportStage.setScene(new Scene(root));
+            reportStage.setTitle("Campus Map");
             reportStage.show();
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,0 +1,59 @@
+.stack-pane {
+    -fx-background-image: url('image/report2.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.form
+{
+    -fx-padding: 10px 20px 10px 40px;
+}
+
+.header
+{
+    -fx-padding: 58px 0px 0px 25px;
+}
+
+.header .back-button:hover
+{
+    -fx-effect: dropshadow(three-pass-box, #000, 7, 0, 0, 0);
+}
+
+.scroll-pane
+{
+    -fx-background-color: transparent;
+}
+
+.section-header {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #810101;
+    -fx-padding: 10px 0px 5px 0px;
+}
+
+.legends-label
+{
+    -fx-font-size: 12px;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-text-fill: #810101;
+}
+
+.poi-label
+{
+    -fx-alignment: center-left;
+    -fx-font-size: 10px;
+    -fx-font-family: "Helvetica";
+    -fx-text-fill: #4D4C4C;
+    -fx-font-style: italic;
+}
+
+.navigation-icons
+{
+    -fx-padding: 0px 0px 25px 0px;
+}
+
+.navigation-icons .navicon:hover
+{
+    -fx-effect: dropshadow(three-pass-box, #000, 7, 0, 0, 0);
+}

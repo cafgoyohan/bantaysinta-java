@@ -26,7 +26,7 @@ public class SignInController {
     // Database credentials
     private static final String DB_URL = "jdbc:mysql://localhost:3306/bantay_sinta_db";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "rootpass";
+    private static final String DB_PASSWORD = "123456";
 
     @FXML
     private TextField emailField;

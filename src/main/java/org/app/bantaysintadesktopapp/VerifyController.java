@@ -24,7 +24,7 @@ public class VerifyController {
     // JDBC URL, username, and password
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/bantay_sinta_db";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "rootpass";
+    private static final String PASSWORD = "123456";
 
     // SQL statement to insert data into the database
     private static final String INSERT_SQL = "INSERT INTO reports (subject, location, description, image_path, certification, user_id) VALUES (?, ?, ?, ?, ?, ?)";
