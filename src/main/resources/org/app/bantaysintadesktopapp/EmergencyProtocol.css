@@ -1,0 +1,90 @@
+.stack-pane {
+    -fx-background-image: url('image/report2.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.top-section
+{
+    -fx-padding: 35px 0px 0px 0px;
+}
+
+.user-name {
+    -fx-fill: #F5F5F5;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.student-num {
+    -fx-fill: #F5F5F5;
+    -fx-font-size: 14px;
+}
+
+.student {
+    -fx-fill: #EDD499;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.main-content {
+    -fx-padding: -60px 0px 10px 30px;
+}
+
+.sub-heading
+{
+    -fx-fill: #810101;
+    -fx-font-size: 15px;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+}
+
+.content
+{
+    -fx-fill: #4D4C4C;
+    -fx-font-size: 13px;
+    -fx-font-family: "Helvetica";
+    -fx-translate-x: 37px;
+    -fx-translate-y: -10px;
+}
+
+.navigation-icons
+{
+    -fx-padding: -49px 20px 25px 20px;
+}
+
+.navigation-icons .navicon:hover
+{
+    -fx-effect: dropshadow(three-pass-box, #BDADAD, 7, 0, 0, 0);
+}
+
+.logout
+{
+    -fx-padding: 20px 0px 0px 0px;
+    -fx-background-color: transparent;
+}
+
+.logout-button
+{
+    -fx-background-color: #810101;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-padding: 4px 50px 4px 50px;
+    -fx-border-color: #810101;
+    -fx-border-width: 3px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+}
+
+.logout-button:hover
+{
+    -fx-background-color: #4B0202;
+    -fx-border-color: #4B0202;
+}
+
+.logout-button:pressed
+{
+    -fx-background-color: #f6f6f6;
+    -fx-text-fill: #4B0202
+}

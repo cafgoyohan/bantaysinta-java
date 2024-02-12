@@ -189,7 +189,7 @@ public class MainController {
             mainStage.close();
 
             // Load ReportPage.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Emergency.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("EmergencyProtocol.fxml"));
             Parent root = loader.load();
 
             // Create and show the report page stage
