@@ -66,6 +66,10 @@
                 <Text fx:id="emailText" styleClass="content" />
             </VBox>
 
+            <VBox alignment="CENTER" prefHeight="20.0" prefWidth="291.0" styleClass="logout">
+                <Button alignment="CENTER" onAction="#handleHomeClick" prefHeight="34.0" prefWidth="171.0" styleClass="main-button" text="EMERGENCY CONTACTS" textAlignment="CENTER" />
+            </VBox>
+
             <VBox alignment="CENTER" prefHeight="54.0" prefWidth="291.0" styleClass="logout">
                 <Button alignment="CENTER" onAction="#handleLogOutButtonClick" prefHeight="34.0" prefWidth="171.0" styleClass="logout-button" text="LOG OUT" textAlignment="CENTER" />
             </VBox>
