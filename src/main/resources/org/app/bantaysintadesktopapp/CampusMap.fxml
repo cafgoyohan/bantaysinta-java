@@ -4,6 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane prefHeight="716.8" prefWidth="331.2" styleClass="stack-pane" stylesheets="@CampusMap.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.bantaysintadesktopapp.CampusMapController">
 
@@ -34,49 +35,172 @@
                         <fitHeight>292</fitHeight>
                     </ImageView>
 
-                    <Label styleClass="legends-label" text="Legends" />
+                    <Label text="Legends" textFill="#810101">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font></Label>
 
                     <VBox alignment="CENTER_LEFT" styleClass="import">
-                        <Label styleClass="poi-label" text="1 Amphitheater" />
-                        <Label styleClass="poi-label" text="2 Banda Kawayan, Sining Lahi Headquarters" />
-                        <Label styleClass="poi-label" text="3 Building and Grounds Maintenance Office" />
-                        <Label styleClass="poi-label" text="4 Catwalk" />
-                        <Label styleClass="poi-label" text="5 Centennial Monument" />
-                        <Label styleClass="poi-label" text="6 Charlie del Rosario Student Development Center" />
-                        <Label styleClass="poi-label" text="7 East Gate" />
-                        <Label styleClass="poi-label" text="8 Flag Pole" />
-                        <Label styleClass="poi-label" text="9 Grandstand" />
-                        <Label styleClass="poi-label" text="10 Gymnasium" />
-                        <Label styleClass="poi-label" text="11 Interfaith Chapel" />
-                        <Label styleClass="poi-label" text="12 Laboratory High School" />
-                        <Label styleClass="poi-label" text="13 Lagoon" />
-                        <Label styleClass="poi-label" text="14 Main Building – Dome" />
-                        <Label styleClass="poi-label" text="15 Main Building - East Wing" />
-                        <Label styleClass="poi-label" text="16 Main Building - North Wing" />
-                        <Label styleClass="poi-label" text="17 Main Building - South Wing" />
-                        <Label styleClass="poi-label" text="18 Main Building - West Wing" />
-                        <Label styleClass="poi-label" text="19 Main Gate" />
-                        <Label styleClass="poi-label" text="20 Nemesio E. Prudente Freedom Park" />
-                        <Label styleClass="poi-label" text="21 Ninoy Aquino Library and Learning Resources Center" />
-                        <Label styleClass="poi-label" text="22 Open Court" />
-                        <Label styleClass="poi-label" text="23 CNFS Building" />
-                        <Label styleClass="poi-label" text="24 Oval Open Field" />
-                        <Label styleClass="poi-label" text="25 P.E. Building" />
-                        <Label styleClass="poi-label" text="26 Pasig River" />
-                        <Label styleClass="poi-label" text="27 Pasig River Ferry (Sta. Mesa Station)" />
-                        <Label styleClass="poi-label" text="28 Access Road" />
-                        <Label styleClass="poi-label" text="29 Public Restroom" />
-                        <Label styleClass="poi-label" text="30 PUP Linear Park" />
-                        <Label styleClass="poi-label" text="31 PUP Mural and the Shrine of Heroism" />
-                        <Label styleClass="poi-label" text="32 PUP Obelisk (and the Mabini Monument)" />
-                        <Label styleClass="poi-label" text="33 PUP Property Building and Motorpool" />
-                        <Label styleClass="poi-label" text="34 PUP Pylon" />
-                        <Label styleClass="poi-label" text="35 Sampaguita Building" />
-                        <Label styleClass="poi-label" text="36 Student Pavilion" />
-                        <Label styleClass="poi-label" text="37 Swimming Pool" />
-                        <Label styleClass="poi-label" text="38 Tennis Open Court" />
-                        <Label styleClass="poi-label" text="39 Water Tank" />
-                        <Label styleClass="poi-label" text="40 West Gate" />
+                        <Label styleClass="poi-label" text="1 Amphitheater" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="2 Banda Kawayan, Sining Lahi Headquarters" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="3 Building and Grounds Maintenance Office" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="4 Catwalk" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="5 Centennial Monument" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="6 Charlie del Rosario Student Development Center" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="7 East Gate" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="8 Flag Pole" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="9 Grandstand" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="10 Gymnasium" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="11 Interfaith Chapel" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="12 Laboratory High School" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="13 Lagoon" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="14 Main Building – Dome" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="15 Main Building - East Wing" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="16 Main Building - North Wing" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="17 Main Building - South Wing" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="18 Main Building - West Wing" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="19 Main Gate" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="20 Nemesio E. Prudente Freedom Park" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="21 Ninoy Aquino Library and Learning Resources Center" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="22 Open Court" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="23 CNFS Building" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="24 Oval Open Field" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="25 P.E. Building" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="26 Pasig River" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="27 Pasig River Ferry (Sta. Mesa Station)" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="28 Access Road" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="29 Public Restroom" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="30 PUP Linear Park" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="31 PUP Mural and the Shrine of Heroism" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="32 PUP Obelisk (and the Mabini Monument)" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="33 PUP Property Building and Motorpool" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="34 PUP Pylon" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="35 Sampaguita Building" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="36 Student Pavilion" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="37 Swimming Pool" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="38 Tennis Open Court" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="39 Water Tank" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                        <Label styleClass="poi-label" text="40 West Gate" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
                     </VBox>
 
                 </VBox>
