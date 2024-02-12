@@ -1,0 +1,88 @@
+.stack-pane {
+    -fx-background-image: url('image/announcement.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.form
+{
+    -fx-padding: 10px 20px 10px 40px;
+}
+
+.header
+{
+    -fx-padding: 58px 0px 0px 25px;
+}
+
+.header-megaphone
+{
+    -fx-width: 250;
+    -fx-height: 50;
+}
+
+.header .back-button:hover
+{
+    -fx-effect: dropshadow(three-pass-box, #000, 7, 0, 0, 0);
+}
+
+.vbox-main
+{
+    -fx-padding: 20px 0px 0px 0px;
+}
+
+.scroll-pane
+{
+    -fx-background-image: url('image/blank.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.section-header {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #810101;
+    -fx-padding: 10px 0px 5px 0px;
+}
+
+.ann-time
+{
+    -fx-font-size: 11px;
+    -fx-font-family: "Helvetica";
+    -fx-text-fill: #888888;
+}
+
+.ann-title
+{
+    -fx-alignment: center-left;
+    -fx-font-size: 12px;
+    -fx-font-family: "Helvetica";
+    -fx-text-fill: #4D4C4C;
+}
+
+.ann-body
+{
+    -fx-alignment: center-left;
+    -fx-font-size: 10px;
+    -fx-font-family: "Helvetica";
+    -fx-text-fill: #4D4C4C;
+}
+
+.pane-big-image
+{
+    -fx-border-radius: 20px 20px 20px 20px;
+}
+
+.page-vbox-main
+{
+    -fx-padding: 20px 0px 20px 0px;
+}
+
+.navigation-icons
+{
+    -fx-padding: 0px 0px 25px 0px;
+}
+
+.navigation-icons .navicon:hover
+{
+    -fx-effect: dropshadow(three-pass-box, #000, 7, 0, 0, 0);
+}

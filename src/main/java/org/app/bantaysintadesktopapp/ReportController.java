@@ -46,8 +46,7 @@ public class ReportController
         navigateToReturnPage();
     }
 
-    @FXML
-    private void handleHomeClick(MouseEvent event) {
+    public void handleHomeClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(homeIcon); // Change size of the clicked icon
         navigateToReturnPage();
