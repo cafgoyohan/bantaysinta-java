@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("OpeningPage.fxml")));
 
         // Set the application icon
-        //stage.getIcons().add(new Image("logo.png"));
+        // stage.getIcons().add(new Image("logo.png"));
 
         // Create the scene
         Scene scene = new Scene(root, 331.2, 716.8);

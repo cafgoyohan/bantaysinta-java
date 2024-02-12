@@ -1,51 +1,97 @@
 package org.app.bantaysintadesktopapp;
 
-import com.sun.javafx.charts.Legend;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-import java.io.File;
+import java.awt.*;
 import java.io.IOException;
+import java.util.Objects;
 
-public class ReportController
+public class AnnouncementController
 {
-
     public ImageView homeIcon;
     public ImageView reportIcon;
     public ImageView mapIcon;
     public ImageView profileIcon;
     public ImageView backButton;
-    public TextField subjectField;
-    public TextField locationField;
-    public TextField descriptionField;
+    public ImageView annImage;
+    public StackPane stackPane;
+
+    public HBox annBox1; // Announcement box
+    public HBox annBox2; // Announcement box
+    public HBox annBox3; // Announcement box
+    public HBox annBox4; // Announcement box
 
     @FXML
-    private ImageView imageView;
-    @FXML
-    private TextField imagePathField;
-    @FXML
-    private Label fileNameLabel;
-    @FXML
-    private Text greetingText;
+    public Label pageTime;
+    public Label pageTitle;
+    public Label pageBody;
 
-    public void handleBackButtonClick(MouseEvent actionEvent) {
-        navigateToReturnPage();
+    boolean inPage = false;
+
+    public class Announcement
+    {
+        String time;
+        String title;
+        String body;
     }
 
-    public void handleHomeClick(MouseEvent event) {
+    public void handleBackButtonClick(MouseEvent actionEvent) {
+        if (inPage)
+        {
+            inPage = false;
+            var page = stackPane.getChildren().getLast();
+            page.setVisible(false);
+        } else
+        {
+            navigateToReturnPage();
+        }
+    }
+
+    @FXML
+    private void handlePageClick(MouseEvent e)
+    {
+        inPage = true;
+        var page = stackPane.getChildren().getLast();
+        HBox annBox = (HBox) e.getSource();
+        String id = annBox.getId();
+
+        if (Objects.equals(id, "annBox1"))
+        {
+            pageTime.setText("Today");
+            pageTitle.setText("Advisory");
+            pageBody.setText("Please be advised that there will be NO FACE-TO-FACE and ONLINE (SYNCHRONOUS / ASYNCHRONOUS CLASSES) on January 9, 2024 in PUP Sta. Mesa Campus, following Malacañang Proclamation 434 declaring Tuesday, January 9, 2024, as a special non-working day in the City of Manila. Thank you.");
+        } else if (Objects.equals(id, "annBox2"))
+        {
+            pageTime.setText("Jan 10");
+            pageTitle.setText("Students and other stakeholders, WE NEED YOUR HELP.");
+            pageBody.setText("The venerable University, via the Institute for Data and Statistical Analysis (IDSA), extends a gracious invitation for your esteemed presence in the Survey on the...");
+        } else if (Objects.equals(id, "annBox3"))
+        {
+            pageTime.setText("Jan 4");
+            pageTitle.setText("Advisory");
+            pageBody.setText("Please be advised that there will be NO FACE-TO-FACE and ONLINE (SYNCHRONOUS / ASYNCHRONOUS CLASSES) on January 9, 2024 in PUP Sta. Mesa Campus, following Malacañang Proclamation 434 declaring Tuesday, January 9, 2024, as a special non-working day in the City of Manila. Thank you.");
+        } else if (Objects.equals(id, "annBox4"))
+        {
+            pageTime.setText("Jan 4");
+            pageTitle.setText("ATTENTION GRADUATING STUDENTS");
+            pageBody.setText("Please be informed that the Application for Graduation for PUP Sta. Mesa and all Branches and Campuses will re-open on January 15, 2024.");
+        }
+
+        page.setVisible(true);
+    }
+
+    @FXML
+    private void handleHomeClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(homeIcon); // Change size of the clicked icon
         navigateToReturnPage();
@@ -112,57 +158,4 @@ public class ReportController
             e.printStackTrace();
         }
     }
-
-    public void handleNextButtonClick(ActionEvent actionEvent) {
-        try {
-            // Load Verify.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Verify.fxml"));
-            Parent root = loader.load();
-
-            // Get the controller of the Verify page
-            VerifyController verifyController = loader.getController();
-
-            // Pass the entered details to the Verify page
-            verifyController.displayDetails(subjectField.getText(), locationField.getText(), descriptionField.getText(), imageView.getImage());
-
-            // Create and show the Verify page stage
-            Stage verifyStage = new Stage();
-            verifyStage.setScene(new Scene(root));
-            verifyStage.setTitle("Verify Details");
-            verifyStage.show();
-
-            // Close the current stage (Report.fxml)
-            Stage currentStage = (Stage) backButton.getScene().getWindow();
-            currentStage.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Method to handle image selection
-    @FXML
-    private void handleImportImage(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select Image File");
-
-        fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.jpeg"));
-
-        File selectedFile = fileChooser.showOpenDialog(imageView.getScene().getWindow());
-
-        if (selectedFile != null) {
-            try {
-                Image image = new Image(selectedFile.toURI().toString());
-                imageView.setImage(image);
-
-                // Display the file name
-                fileNameLabel.setText(selectedFile.getName());
-
-                // Set the image path to the text field
-                imagePathField.setText(selectedFile.getAbsolutePath());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
 }

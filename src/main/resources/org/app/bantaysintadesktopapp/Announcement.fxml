@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="716.8" prefWidth="331.2" styleClass="stack-pane" stylesheets="@Announcement.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.bantaysintadesktopapp.AnnouncementController">
+
+    <!-- Header -->
+    <top>
+        <HBox styleClass="header">
+            <ImageView fx:id="backButton" onMouseClicked="#handleBackButtonClick" styleClass="back-button">
+                <Image url="@image/back-icon.png" />
+                <fitWidth>20</fitWidth>
+                <fitHeight>20</fitHeight>
+            </ImageView>
+        </HBox>
+    </top>
+
+    <!-- Main Content (Form) -->
+    <center>
+
+        <StackPane fx:id="stackPane">
+         <ScrollPane hbarPolicy="NEVER" maxHeight="528.0" maxWidth="332.0" minHeight="525" minWidth="331.2" prefHeight="528.0" prefWidth="332.0" styleClass="scroll-pane">
+            <content>
+                  <VBox alignment="TOP_CENTER" maxHeight="525" maxWidth="331.0" prefHeight="524.0" prefWidth="331.0" spacing="10" style="-fx-padding: 20px 0px 10px 0px;">
+                      <ImageView preserveRatio="true" styleClass="header-megaphone">
+                          <Image url="@image/header-megaphone.png" />
+                          <fitWidth>200</fitWidth>
+                          <fitHeight>90</fitHeight>
+                      </ImageView>
+      
+                      <VBox alignment="CENTER_LEFT" maxHeight="525" maxWidth="320" spacing="10" style="-fx-padding: 10px 10px 20px 20px;">
+      
+                          <HBox fx:id="annBox1" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5" GridPane.columnIndex="3">
+                              <Label alignment="center" prefHeight="16.0" prefWidth="50.0" styleClass="ann-time" text="Today" />
+                              <VBox maxWidth="192.0" prefHeight="77.0" prefWidth="192.0">
+                                  <Label prefHeight="17.0" prefWidth="297.0" styleClass="ann-title" text="Advisory">
+                              <font>
+                                 <Font name="System Bold" size="12.0" />
+                              </font>
+                           </Label>
+                                  <Label prefHeight="57.0" prefWidth="196.0" styleClass="ann-body" text="Please be advised that there will be NO FACE-TO-FACE  and ONLINE (SYNCHRONOUS / ASYNCHRONOUS CLASSES) on January 9, 2024 in PUP Sta..." wrapText="true" />
+                              </VBox>
+                              <ImageView styleClass="ann-image">
+                                  <Image url="@image/advisory.png" />
+                                  <fitWidth>50.0</fitWidth>
+                                  <fitHeight>50.0</fitHeight>
+                              </ImageView>
+                          </HBox>
+      
+                          <HBox fx:id="annBox2" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" prefHeight="77.0" prefWidth="324.0" spacing="5">
+                              <Label alignment="CENTER" prefHeight="16.0" prefWidth="50.0" styleClass="ann-time" text="Today" />
+                              <VBox maxWidth="192.0" prefHeight="77.0" prefWidth="192.0">
+                                  <Label prefHeight="32.0" prefWidth="192.0" styleClass="ann-title" text="Students and other stakeholders, WE NEED YOUR HELP." textAlignment="JUSTIFY" wrapText="true">
+                              <font>
+                                 <Font name="System Bold" size="12.0" />
+                              </font>
+                           </Label>
+                                  <Label prefHeight="57.0" prefWidth="434.0" styleClass="ann-body" text="The venerable University, via the Institute for Data and Statistical Analysis (IDSA), extends a gracious invitation for your esteemed presence in the Survey on the..." wrapText="true" />
+                              </VBox>
+                          </HBox>
+      
+                          <HBox fx:id="annBox3"  alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5">
+                              <Label alignment="center" prefHeight="16.0" prefWidth="50.0" styleClass="ann-time" text="Jan 10" />
+                              <VBox maxWidth="192.0" prefHeight="77.0" prefWidth="192.0">
+                                  <Label prefHeight="17.0" prefWidth="279.0" styleClass="ann-title" text="Advisory">
+                              <font>
+                                 <Font name="System Bold" size="12.0" />
+                              </font>
+                           </Label>
+                                  <Label prefHeight="57.0" prefWidth="196.0" styleClass="ann-body" text="Please be advised that there will be NO FACE-TO-FACE  and ONLINE (SYNCHRONOUS / ASYNCHRONOUS CLASSES) on January 9, 2024 in PUP Sta..." wrapText="true" />
+                              </VBox>
+                              <ImageView styleClass="ann-image">
+                                  <Image url="@image/advisory.png" />
+                                  <fitWidth>50.0</fitWidth>
+                                  <fitHeight>50.0</fitHeight>
+                              </ImageView>
+                          </HBox>
+      
+                          <HBox fx:id="annBox4"  alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5">
+                              <Label alignment="center" prefHeight="16.0" prefWidth="50.0" styleClass="ann-time" text="Jan 4" />
+                              <VBox maxWidth="192.0" prefHeight="77.0" prefWidth="192.0">
+                                  <Label prefHeight="17.0" prefWidth="316.0" styleClass="ann-title" text="ATTENTION GRADUATING STUDENTS">
+                              <font>
+                                 <Font name="System Bold" size="12.0" />
+                              </font>
+                           </Label>
+                                  <Label prefHeight="57.0" prefWidth="196.0" styleClass="ann-body" text="Please be informed that the Application for Graduation for PUP Sta. Mesa and all Branches and Campuses will re-open on January 15, 2024..." wrapText="true" />
+                              </VBox>
+                              <ImageView styleClass="ann-image">
+                                  <Image url="@image/advisory.png" />
+                                  <fitWidth>50.0</fitWidth>
+                                  <fitHeight>50.0</fitHeight>
+                              </ImageView>
+                          </HBox>
+      
+                      </VBox>
+                  </VBox>
+            </content>
+         </ScrollPane>
+
+            <ScrollPane hbarPolicy="NEVER" maxHeight="525" maxWidth="331.2" minHeight="525" minWidth="331.2" prefHeight="525" prefWidth="331.2" styleClass="scroll-pane" vbarPolicy="ALWAYS" visible="false">
+                <VBox alignment="CENTER" prefWidth="332.0" spacing="5" style="-fx-padding: 40px 0px 20px 0px;" styleClass="page-vbox-main">
+                    <ImageView preserveRatio="true" styleClass="pane-big-image">
+                        <Image url="@image/advisory.png" />
+                        <fitWidth>200.0</fitWidth>
+                        <fitHeight>200.0</fitHeight>
+                    </ImageView>
+
+                    <VBox prefHeight="369.0" prefWidth="332.0" style="-fx-padding: 20px 40px 5px 40px;">
+                        <Label fx:id="pageTime" text="Today  |  5:00" textFill="#888888">
+                     <font>
+                        <Font name="Century Gothic" size="12.0" />
+                     </font></Label>
+                        <Label fx:id="pageTitle" text="Advisory" textFill="#810101" wrapText="true">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="pageBody" alignment="TOP_CENTER" layoutX="10.0" layoutY="27.0" prefHeight="261.0" prefWidth="252.0" text="Please be advised that there will be NO FACE-TO-FACE and ONLINE (SYNCHRONOUS / ASYNCHRONOUS CLASSES) on January 9, 2024 in PUP Sta. Mesa Campus, following Malacañang Proclamation 434 declaring Tuesday, January 9, 2024, as a special non-working day in the City of Manila. Thank you." textAlignment="JUSTIFY" wrapText="true">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                    </VBox>
+                </VBox>
+            </ScrollPane>
+
+        </StackPane>
+    </center>
+
+    <!-- Navigation Icons -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="40" styleClass="navigation-icons">
+            <ImageView fx:id="homeIcon" onMouseClicked="#handleHomeClick" styleClass="navicon">
+                <Image url="@image/home-icon.png" />
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+            <ImageView fx:id="reportIcon" onMouseClicked="#handleReportClick" styleClass="navicon">
+                <Image url="@image/report-icon.png" />
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+            <ImageView fx:id="mapIcon" onMouseClicked="#handleMapClick" styleClass="navicon">
+                <Image url="@image/map-icon.png" />
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+            <ImageView fx:id="profileIcon" onMouseClicked="#handleProfileClick" styleClass="navicon">
+                <Image url="@image/profile-icon.png" />
+                <fitWidth>27</fitWidth>
+                <fitHeight>27</fitHeight>
+            </ImageView>
+        </HBox>
+    </bottom>
+
+</BorderPane>

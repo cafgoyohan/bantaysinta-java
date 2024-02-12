@@ -54,6 +54,7 @@ public class MainController {
     @FXML
     private void handleAnnouncements(ActionEvent event) {
         // Handle Announcements button click
+        navigateToAnnouncementsPage();
     }
 
     @FXML
@@ -161,5 +162,27 @@ public class MainController {
             e.printStackTrace();
         }
     }
+
+    private void navigateToAnnouncementsPage()
+    {
+        try {
+            // Close the main stage
+            Stage mainStage = (Stage) greetingText.getScene().getWindow();
+            mainStage.close();
+
+            // Load ReportPage.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Announcement.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the report page stage
+            Stage reportStage = new Stage();
+            reportStage.setScene(new Scene(root));
+            reportStage.setTitle("Announcements");
+            reportStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }

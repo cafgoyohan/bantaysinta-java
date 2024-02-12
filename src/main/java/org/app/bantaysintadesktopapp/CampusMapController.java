@@ -121,9 +121,6 @@ public class CampusMapController
 
     public void handleFullMapClick(MouseEvent e)
     {
-        double mouseX = e.getX();
-        double mouseY = e.getY();
-
         double oldScaleX = fullMapImage.getScaleX();
         double oldScaleY = fullMapImage.getScaleY();
 
@@ -136,17 +133,5 @@ public class CampusMapController
             fullMapImage.setScaleY(oldScaleY / 1.2);
             zoomLevel--;
         }
-
-        double contentWidth = fullMapImage.getBoundsInParent().getWidth();
-        double contentHeight = fullMapImage.getBoundsInParent().getHeight();
-
-        double viewportWidth = spFullMap.getViewportBounds().getWidth();
-        double viewportHeight = spFullMap.getViewportBounds().getHeight();
-
-        double newScrollX = (mouseX / contentWidth) * (fullMapImage.getScaleX() * contentWidth - viewportWidth);
-        double newScrollY = (mouseY / contentHeight) * (fullMapImage.getScaleY() * contentHeight - viewportHeight);
-
-        spFullMap.setHvalue(newScrollX);
-        spFullMap.setVvalue(newScrollY);
     }
 }
