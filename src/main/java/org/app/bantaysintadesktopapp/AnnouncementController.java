@@ -72,12 +72,12 @@ public class AnnouncementController
             pageBody.setText("Please be advised that there will be NO FACE-TO-FACE and ONLINE (SYNCHRONOUS / ASYNCHRONOUS CLASSES) on January 9, 2024 in PUP Sta. Mesa Campus, following Malacañang Proclamation 434 declaring Tuesday, January 9, 2024, as a special non-working day in the City of Manila. Thank you.");
         } else if (Objects.equals(id, "annBox2"))
         {
-            pageTime.setText("Jan 10");
+            pageTime.setText("Today");
             pageTitle.setText("Students and other stakeholders, WE NEED YOUR HELP.");
             pageBody.setText("The venerable University, via the Institute for Data and Statistical Analysis (IDSA), extends a gracious invitation for your esteemed presence in the Survey on the...");
         } else if (Objects.equals(id, "annBox3"))
         {
-            pageTime.setText("Jan 4");
+            pageTime.setText("Jan 10");
             pageTitle.setText("Advisory");
             pageBody.setText("Please be advised that there will be NO FACE-TO-FACE and ONLINE (SYNCHRONOUS / ASYNCHRONOUS CLASSES) on January 9, 2024 in PUP Sta. Mesa Campus, following Malacañang Proclamation 434 declaring Tuesday, January 9, 2024, as a special non-working day in the City of Manila. Thank you.");
         } else if (Objects.equals(id, "annBox4"))
