@@ -60,7 +60,7 @@ public class VerifyController {
     private void handleHomeClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(homeIcon); // Change size of the clicked icon
-        navigateToReturnPage();
+        navigateToMainPage();
         System.out.println("Home icon clicked");
     }
 
@@ -68,6 +68,7 @@ public class VerifyController {
     private void handleReportClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(reportIcon); // Change size of the clicked icon
+        navigateToReportPage();
         System.out.println("Report icon clicked");
     }
 
@@ -75,6 +76,7 @@ public class VerifyController {
     private void handleMapClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(mapIcon); // Change size of the clicked icon
+        navigateToCampusMapPage();
         System.out.println("Map icon clicked");
     }
 
@@ -82,6 +84,7 @@ public class VerifyController {
     private void handleProfileClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(profileIcon); // Change size of the clicked icon
+        navigateToProfilePage();
         System.out.println("Profile icon clicked");
     }
 
@@ -105,6 +108,45 @@ public class VerifyController {
         profileIcon.setFitHeight(ORIGINAL_SIZE);
     }
 
+    @FXML
+    private void handleSubmitButtonClick(ActionEvent event) {
+        // Check if the checkbox is selected
+        if (certificationCheckbox.isSelected()) {
+            // Perform submission
+            System.out.println("Submission successful.");
+
+            // Prompt the user to provide their student number
+            TextInputDialog dialog = new TextInputDialog();
+            dialog.setTitle("Student Number");
+            dialog.setHeaderText(null);
+            dialog.setContentText("Please enter your student number for verification:");
+            Optional<String> result = dialog.showAndWait();
+
+            // Check if the result is present and not empty
+            if (result.isPresent() && !result.get().isEmpty()) {
+                String studentNum = result.get();
+                // Insert the report into the database
+                insertReportIntoDatabase(studentNum);
+                navigateToSuccessPage(event);
+            } else {
+                // Show a message indicating that the student number is required
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText(null);
+                alert.setContentText("Please enter your student number.");
+                alert.showAndWait();
+            }
+
+        } else {
+            // Show an alert or message indicating the checkbox must be checked
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please certify that the details provided are true and legitimate.");
+            alert.showAndWait();
+        }
+    }
+
     private void navigateToReturnPage() {
         try {
             // Load Main.fxml
@@ -125,37 +167,6 @@ public class VerifyController {
         }
     }
 
-
-    @FXML
-    private void handleSubmitButtonClick(ActionEvent event) {
-        // Check if the checkbox is selected
-        if (certificationCheckbox.isSelected()) {
-            // Perform submission
-            System.out.println("Submission successful.");
-
-            // Prompt the user to provide the image path
-            TextInputDialog dialog = new TextInputDialog();
-            dialog.setTitle("Student Number");
-            dialog.setHeaderText(null);
-            dialog.setContentText("Please enter your student number for verification:");
-            Optional<String> result = dialog.showAndWait();
-            result.ifPresent(studentNum -> {
-                // Insert the report into the database
-                insertReportIntoDatabase(studentNum);
-            });
-
-            navigateToSuccessPage(event);
-
-        } else {
-            // Show an alert or message indicating the checkbox must be checked
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please certify that the details provided are true and legitimate.");
-            alert.showAndWait();
-        }
-    }
-
     private void navigateToSuccessPage(ActionEvent event) {
         try {
             // Load Main.fxml
@@ -171,6 +182,86 @@ public class VerifyController {
             // Close the current stage (Report.fxml)
             Stage currentStage = (Stage) backButton.getScene().getWindow();
             currentStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void navigateToReportPage() {
+        try {
+            // Close the main stage
+            Stage mainStage = (Stage) reportIcon.getScene().getWindow();
+            mainStage.close();
+
+            // Load ReportPage.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Report.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the report page stage
+            Stage reportStage = new Stage();
+            reportStage.setScene(new Scene(root));
+            reportStage.setTitle("Report Page");
+            reportStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void navigateToCampusMapPage() {
+        try {
+            // Close the main stage
+            Stage mainStage = (Stage) mapIcon.getScene().getWindow();
+            mainStage.close();
+
+            // Load ReportPage.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CampusMap.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the report page stage
+            Stage reportStage = new Stage();
+            reportStage.setScene(new Scene(root));
+            reportStage.setTitle("Campus Map");
+            reportStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void navigateToMainPage() {
+        try {
+            // Load Main.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Main.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the main page stage
+            Stage mainStage = new Stage();
+            mainStage.setScene(new Scene(root));
+            mainStage.setTitle("Main Page");
+            mainStage.show();
+
+            // Close the current stage (Report.fxml)
+            Stage currentStage = (Stage) homeIcon.getScene().getWindow();
+            currentStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void navigateToProfilePage() {
+        try {
+            // Close the main stage
+            Stage mainStage = (Stage) profileIcon.getScene().getWindow();
+            mainStage.close();
+
+            // Load ReportPage.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Profile.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the report page stage
+            Stage reportStage = new Stage();
+            reportStage.setScene(new Scene(root));
+            reportStage.setTitle("Profile Page");
+            reportStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
