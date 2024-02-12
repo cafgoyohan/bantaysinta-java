@@ -33,7 +33,7 @@
       
                       <VBox alignment="CENTER_LEFT" maxHeight="525" maxWidth="320" spacing="10" style="-fx-padding: 10px 10px 20px 20px;">
       
-                          <HBox fx:id="annBox1" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5" GridPane.columnIndex="3">
+                          <HBox fx:id="annBox1" styleClass="ann-box" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5">
                               <Label alignment="center" prefHeight="16.0" prefWidth="50.0" styleClass="ann-time" text="Today" />
                               <VBox maxWidth="192.0" prefHeight="77.0" prefWidth="192.0">
                                   <Label prefHeight="17.0" prefWidth="297.0" text="Advisory">
@@ -50,7 +50,7 @@
                               </ImageView>
                           </HBox>
       
-                          <HBox fx:id="annBox2" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" prefHeight="77.0" prefWidth="324.0" spacing="5">
+                          <HBox fx:id="annBox2" styleClass="ann-box" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" prefHeight="77.0" prefWidth="324.0" spacing="5">
                               <Label alignment="CENTER" prefHeight="16.0" prefWidth="50.0" styleClass="ann-time" text="Today" />
                               <VBox maxWidth="252.0" prefHeight="77.0" prefWidth="252.0">
                                   <Label prefHeight="29.0" prefWidth="234.0" text="Students and other stakeholders, WE NEED YOUR HELP." textAlignment="JUSTIFY" wrapText="true">
@@ -62,7 +62,7 @@
                               </VBox>
                           </HBox>
       
-                          <HBox fx:id="annBox3" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5">
+                          <HBox fx:id="annBox3" styleClass="ann-box" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5">
                               <Label alignment="center" prefHeight="16.0" prefWidth="50.0" styleClass="ann-time" text="Jan 10" />
                               <VBox maxWidth="192.0" prefHeight="77.0" prefWidth="192.0">
                                   <Label prefHeight="17.0" prefWidth="279.0" text="Advisory">
@@ -79,7 +79,7 @@
                               </ImageView>
                           </HBox>
       
-                          <HBox fx:id="annBox4" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5">
+                          <HBox fx:id="annBox4" styleClass="ann-box" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5">
                               <Label alignment="center" prefHeight="16.0" prefWidth="50.0" styleClass="ann-time" text="Jan 4" />
                               <VBox maxWidth="192.0" prefHeight="77.0" prefWidth="192.0">
                                   <Label prefHeight="17.0" prefWidth="316.0" text="ATTENTION GRADUATING STUDENTS">

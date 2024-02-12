@@ -44,6 +44,15 @@
     -fx-padding: 10px 0px 5px 0px;
 }
 
+.ann-box
+{
+}
+
+.ann-box:hover
+{
+    -fx-opacity: 0.7;
+}
+
 .ann-time
 {
     -fx-font-size: 11px;
