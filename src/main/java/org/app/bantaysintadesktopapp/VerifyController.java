@@ -3,6 +3,7 @@ package org.app.bantaysintadesktopapp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -124,6 +125,57 @@ public class VerifyController {
         }
     }
 
+
+    @FXML
+    private void handleSubmitButtonClick(ActionEvent event) {
+        // Check if the checkbox is selected
+        if (certificationCheckbox.isSelected()) {
+            // Perform submission
+            System.out.println("Submission successful.");
+
+            // Prompt the user to provide the image path
+            TextInputDialog dialog = new TextInputDialog();
+            dialog.setTitle("Student Number");
+            dialog.setHeaderText(null);
+            dialog.setContentText("Please enter your student number for verification:");
+            Optional<String> result = dialog.showAndWait();
+            result.ifPresent(studentNum -> {
+                // Insert the report into the database
+                insertReportIntoDatabase(studentNum);
+            });
+
+            navigateToSuccessPage(event);
+
+        } else {
+            // Show an alert or message indicating the checkbox must be checked
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please certify that the details provided are true and legitimate.");
+            alert.showAndWait();
+        }
+    }
+
+    private void navigateToSuccessPage(ActionEvent event) {
+        try {
+            // Load Main.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Success.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the main page stage
+            Stage mainStage = new Stage();
+            mainStage.setScene(new Scene(root));
+            mainStage.setTitle("Thank you for submitting a report!");
+            mainStage.show();
+
+            // Close the current stage (Report.fxml)
+            Stage currentStage = (Stage) backButton.getScene().getWindow();
+            currentStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     private void insertReportIntoDatabase(String studentNum) {
         // Database connection parameters
         String url = "jdbc:mysql://localhost:3306/bantay_sinta_db";
@@ -155,51 +207,6 @@ public class VerifyController {
                 System.out.println("Report inserted successfully.");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @FXML
-    private void handleSubmitButtonClick(ActionEvent actionEvent) {
-        // Check if the checkbox is selected
-        if (certificationCheckbox.isSelected()) {
-            // Perform submission
-            System.out.println("Submission successful.");
-
-            // Prompt the user to provide the image path
-            TextInputDialog dialog = new TextInputDialog();
-            dialog.setTitle("Student Number");
-            dialog.setHeaderText(null);
-            dialog.setContentText("Please enter your student number for verification:");
-            Optional<String> result = dialog.showAndWait();
-            result.ifPresent(studentNum -> {
-                // Insert the report into the database
-                insertReportIntoDatabase(studentNum);
-            });
-        } else {
-            // Show an alert or message indicating the checkbox must be checked
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please certify that the details provided are true and legitimate.");
-            alert.showAndWait();
-        }
-
-        try {
-            // Load Main.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Success.fxml"));
-            Parent root = loader.load();
-
-            // Create and show the main page stage
-            Stage mainStage = new Stage();
-            mainStage.setScene(new Scene(root));
-            mainStage.setTitle("Thank you for submitting a report!");
-            mainStage.show();
-
-            // Close the current stage (Report.fxml)
-            Stage currentStage = (Stage) backButton.getScene().getWindow();
-            currentStage.close();
-        } catch (IOException e) {
             e.printStackTrace();
         }
     }
