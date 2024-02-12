@@ -36,7 +36,7 @@
                           <HBox fx:id="annBox1" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5" GridPane.columnIndex="3">
                               <Label alignment="center" prefHeight="16.0" prefWidth="50.0" styleClass="ann-time" text="Today" />
                               <VBox maxWidth="192.0" prefHeight="77.0" prefWidth="192.0">
-                                  <Label prefHeight="17.0" prefWidth="297.0" styleClass="ann-title" text="Advisory">
+                                  <Label prefHeight="17.0" prefWidth="297.0" text="Advisory">
                               <font>
                                  <Font name="System Bold" size="12.0" />
                               </font>
@@ -52,20 +52,20 @@
       
                           <HBox fx:id="annBox2" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" prefHeight="77.0" prefWidth="324.0" spacing="5">
                               <Label alignment="CENTER" prefHeight="16.0" prefWidth="50.0" styleClass="ann-time" text="Today" />
-                              <VBox maxWidth="192.0" prefHeight="77.0" prefWidth="192.0">
-                                  <Label prefHeight="32.0" prefWidth="192.0" styleClass="ann-title" text="Students and other stakeholders, WE NEED YOUR HELP." textAlignment="JUSTIFY" wrapText="true">
+                              <VBox maxWidth="252.0" prefHeight="77.0" prefWidth="252.0">
+                                  <Label prefHeight="29.0" prefWidth="234.0" text="Students and other stakeholders, WE NEED YOUR HELP." textAlignment="JUSTIFY" wrapText="true">
                               <font>
                                  <Font name="System Bold" size="12.0" />
                               </font>
                            </Label>
-                                  <Label prefHeight="57.0" prefWidth="434.0" styleClass="ann-body" text="The venerable University, via the Institute for Data and Statistical Analysis (IDSA), extends a gracious invitation for your esteemed presence in the Survey on the..." wrapText="true" />
+                                  <Label prefHeight="50.0" prefWidth="213.0" styleClass="ann-body" text="The venerable University, via the Institute for Data and Statistical Analysis (IDSA), extends a gracious invitation for your esteemed presence in the Survey on the..." wrapText="true" />
                               </VBox>
                           </HBox>
       
-                          <HBox fx:id="annBox3"  alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5">
+                          <HBox fx:id="annBox3" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5">
                               <Label alignment="center" prefHeight="16.0" prefWidth="50.0" styleClass="ann-time" text="Jan 10" />
                               <VBox maxWidth="192.0" prefHeight="77.0" prefWidth="192.0">
-                                  <Label prefHeight="17.0" prefWidth="279.0" styleClass="ann-title" text="Advisory">
+                                  <Label prefHeight="17.0" prefWidth="279.0" text="Advisory">
                               <font>
                                  <Font name="System Bold" size="12.0" />
                               </font>
@@ -79,10 +79,10 @@
                               </ImageView>
                           </HBox>
       
-                          <HBox fx:id="annBox4"  alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5">
+                          <HBox fx:id="annBox4" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5">
                               <Label alignment="center" prefHeight="16.0" prefWidth="50.0" styleClass="ann-time" text="Jan 4" />
                               <VBox maxWidth="192.0" prefHeight="77.0" prefWidth="192.0">
-                                  <Label prefHeight="17.0" prefWidth="316.0" styleClass="ann-title" text="ATTENTION GRADUATING STUDENTS">
+                                  <Label prefHeight="17.0" prefWidth="316.0" text="ATTENTION GRADUATING STUDENTS">
                               <font>
                                  <Font name="System Bold" size="12.0" />
                               </font>
