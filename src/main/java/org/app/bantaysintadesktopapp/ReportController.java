@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -63,6 +64,7 @@ public class ReportController
     private void handleMapClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(mapIcon); // Change size of the clicked icon
+        navigateToCampusMapPage();
         System.out.println("Map icon clicked");
     }
 
@@ -70,6 +72,7 @@ public class ReportController
     private void handleProfileClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(profileIcon); // Change size of the clicked icon
+        navigateToProfilePage();
         System.out.println("Profile icon clicked");
     }
 
@@ -114,6 +117,20 @@ public class ReportController
     }
 
     public void handleNextButtonClick(ActionEvent actionEvent) {
+        // Validate if all required fields are filled
+        if (subjectField.getText().isEmpty() || locationField.getText().isEmpty() ||
+                descriptionField.getText().isEmpty() || imageView.getImage() == null ||
+                fileNameLabel.getText().isEmpty() || imagePathField.getText().isEmpty()) {
+
+            // Show an alert or message indicating that all fields are required
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Please fill out all fields before proceeding.");
+            alert.showAndWait();
+            return; // Exit method without proceeding
+        }
+
         try {
             // Load Verify.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Verify.fxml"));
@@ -123,7 +140,8 @@ public class ReportController
             VerifyController verifyController = loader.getController();
 
             // Pass the entered details to the Verify page
-            verifyController.displayDetails(subjectField.getText(), locationField.getText(), descriptionField.getText(), imageView.getImage());
+            verifyController.displayDetails(subjectField.getText(), locationField.getText(),
+                    descriptionField.getText(), imageView.getImage(), fileNameLabel.getText(), imagePathField.getText());
 
             // Create and show the Verify page stage
             Stage verifyStage = new Stage();
@@ -138,6 +156,7 @@ public class ReportController
             e.printStackTrace();
         }
     }
+
 
     // Method to handle image selection
     @FXML
@@ -162,6 +181,45 @@ public class ReportController
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    private void navigateToProfilePage() {
+        try {
+            // Close the main stage
+            Stage mainStage = (Stage) profileIcon.getScene().getWindow();
+            mainStage.close();
+
+            // Load ReportPage.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Profile.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the report page stage
+            Stage reportStage = new Stage();
+            reportStage.setScene(new Scene(root));
+            reportStage.setTitle("Profile Page");
+            reportStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    private void navigateToCampusMapPage() {
+        try {
+            // Close the main stage
+            Stage mainStage = (Stage) mapIcon.getScene().getWindow();
+            mainStage.close();
+
+            // Load ReportPage.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CampusMap.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the report page stage
+            Stage reportStage = new Stage();
+            reportStage.setScene(new Scene(root));
+            reportStage.setTitle("Campus Map");
+            reportStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

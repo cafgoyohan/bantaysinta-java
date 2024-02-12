@@ -56,9 +56,11 @@
                     <Label styleClass="report-content" fx:id="descriptionLabel"/>
                 </VBox>
 
-                <VBox spacing="5">
-                    <Label text="Supporting media:" styleClass="report-label"/>
+                <Label text="Supporting media: *" styleClass="report-label"/>
+                <VBox alignment="CENTER" styleClass="import">
                     <ImageView fx:id="imageView" fitWidth="100" fitHeight="100" styleClass="image-view"/>
+                    <Label fx:id="fileNameLabel" styleClass="name-label"/>
+                    <TextField fx:id="imagePathField" styleClass="path-field"/>
                 </VBox>
 
                 <CheckBox fx:id="certificationCheckbox" styleClass="check-box"

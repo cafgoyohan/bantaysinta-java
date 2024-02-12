@@ -25,6 +25,10 @@ public class HelloApplication extends Application {
         // Set the scene to the stage
         stage.setScene(scene);
         stage.setTitle("Bantay Sinta"); // Set the window title
+
+        // Set the application icon for the stage
+        //stage.getIcons().add(new Image("image/logo.png"));
+
         stage.show(); // Show the stage
     }
 
