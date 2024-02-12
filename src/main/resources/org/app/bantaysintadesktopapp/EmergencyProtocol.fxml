@@ -1,80 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="716.8" prefWidth="331.2" styleClass="stack-pane" stylesheets="@EmergencyProtocol.css"
-            xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="org.app.bantaysintadesktopapp.ProfileController">
+<BorderPane prefHeight="716.8" prefWidth="331.2" styleClass="stack-pane" stylesheets="@EmergencyProtocol.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.bantaysintadesktopapp.AnnouncementController">
+
+    <!-- Header -->
     <top>
-        <VBox alignment="CENTER" spacing="10" styleClass="top-section">
-
-            <VBox alignment="CENTER" styleClass="name-studentnum">
-                <Text fx:id="userNameText" styleClass="user-name" />
-                <Text fx:id="studentNumberText" styleClass="student-num" />
-            </VBox>
-
-            <VBox alignment="CENTER">
-                <Text styleClass="student" text="Student" />
-            </VBox>
-        </VBox>
+        <HBox styleClass="header">
+            <ImageView fx:id="backButton" onMouseClicked="#handleBackButtonClick" styleClass="back-button">
+                <Image url="@image/back-icon.png" />
+                <fitWidth>20</fitWidth>
+                <fitHeight>20</fitHeight>
+            </ImageView>
+        </HBox>
     </top>
 
+    <!-- Main Content (Form) -->
     <center>
-        <VBox alignment="CENTER" spacing="20">
-            <VBox alignment="CENTER_LEFT" spacing="10" styleClass="main-content">
-                <HBox alignment="CENTER_LEFT" spacing="10">
-                    <ImageView styleClass="icon">
-                        <Image url="@image/address.png" />
-                        <fitWidth>23</fitWidth>
-                        <preserveRatio>true</preserveRatio>
-                    </ImageView>
-                    <Text styleClass="sub-heading" text="Residential Address" />
-                </HBox>
-                <Text fx:id="addressText" styleClass="content" />
+        <VBox alignment="TOP_CENTER" maxHeight="525" maxWidth="331.0" prefHeight="524.0" prefWidth="331.0" spacing="10" style="-fx-padding: 20px 0px 10px 0px;">
+        <ImageView preserveRatio="true" styleClass="header-megaphone">
+            <Image url="@image/EP_Header.png" />
+            <fitWidth>200</fitWidth>
+            <fitHeight>90</fitHeight>
+        </ImageView>
 
-                <HBox alignment="CENTER_LEFT" spacing="10">
-                    <ImageView styleClass="icon">
-                        <Image url="@image/program.png" />
-                        <fitWidth>23</fitWidth>
-                        <preserveRatio>true</preserveRatio>
-                    </ImageView>
-                    <Text styleClass="sub-heading" text="Program" />
-                </HBox>
-                <Text fx:id="programText" styleClass="content" />
+            <ImageView preserveRatio="true" styleClass="header-megaphone">
+                <Image url="@image/EP_Text1.png" />
+                <fitWidth>300</fitWidth>
+                <fitHeight>135</fitHeight>
+            </ImageView>
 
-                <HBox alignment="CENTER_LEFT" spacing="10">
-                    <ImageView styleClass="icon">
-                        <Image url="@image/program.png" />
-                        <fitWidth>23</fitWidth>
-                        <preserveRatio>true</preserveRatio>
-                    </ImageView>
-                    <Text styleClass="sub-heading" text="Year and Section" />
-                </HBox>
-                <Text fx:id="yearSectionText" styleClass="content" />
+            <ImageView preserveRatio="true" styleClass="header-megaphone">
+                <Image url="@image/EP_Buttons.png" />
+                <fitWidth>300</fitWidth>
+                <fitHeight>135</fitHeight>
+            </ImageView>
 
-                <HBox alignment="CENTER_LEFT" spacing="10">
-                    <ImageView styleClass="icon">
-                        <Image url="@image/email.png" />
-                        <fitWidth>23</fitWidth>
-                        <preserveRatio>true</preserveRatio>
-                    </ImageView>
-                    <Text styleClass="sub-heading" text="Email" />
-                </HBox>
-                <Text fx:id="emailText" styleClass="content" />
-            </VBox>
-
-            <VBox alignment="CENTER" prefHeight="20.0" prefWidth="291.0" styleClass="logout">
-                <Button alignment="CENTER" onAction="#handleHomeClick" prefHeight="34.0" prefWidth="171.0" styleClass="main-button" text="EMERGENCY CONTACTS" textAlignment="CENTER" />
-            </VBox>
-
-            <VBox alignment="CENTER" prefHeight="54.0" prefWidth="291.0" styleClass="logout">
-                <Button alignment="CENTER" onAction="#handleLogOutButtonClick" prefHeight="34.0" prefWidth="171.0" styleClass="logout-button" text="LOG OUT" textAlignment="CENTER" />
-            </VBox>
-
+            <ImageView preserveRatio="true" styleClass="header-megaphone">
+                <Image url="@image/EP_Text2.png" />
+                <fitWidth>300</fitWidth>
+                <fitHeight>135</fitHeight>
+            </ImageView>
         </VBox>
+
     </center>
 
     <!-- Navigation Icons -->
