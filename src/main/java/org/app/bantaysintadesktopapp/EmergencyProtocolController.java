@@ -2,80 +2,43 @@ package org.app.bantaysintadesktopapp;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class MainController {
+public class EmergencyProtocolController {
 
     public ImageView homeIcon;
     public ImageView reportIcon;
     public ImageView mapIcon;
     public ImageView profileIcon;
-
     @FXML
-    private Text greetingText;
-
+    private Text userNameText;
     @FXML
-    private Text dateText;
-
-    private String username;
-
-    // Method to set the username
-    public void setUsername(String username) {
-        this.username = username;
-        initialize();
-    }
-
+    private Text studentNumberText;
     @FXML
-    public void initialize() {
-        // Set greeting message with user's first name
-        if (username != null && !username.isEmpty()) {
-            greetingText.setText("Hello, " + username);
-        } else {
-            greetingText.setText("Hello, Guest");
-        }
-
-        // Set current date
-        LocalDate currentDate = LocalDate.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E, dd MMM, yyyy");
-        dateText.setText(formatter.format(currentDate));
-    }
-
+    private Text programText;
     @FXML
-    private void handleAnnouncements(ActionEvent event) {
-        // Handle Announcements button click
-    }
-
+    private Text yearSectionText;
     @FXML
-    private void handleReportOccurrence(ActionEvent event) {
-        navigateToReportPage();
-    }
-
+    private Text addressText;
     @FXML
-    private void handleEmergencyProtocols(ActionEvent event) { navigateToEmergencyProtocolPage();
-        // Handle Emergency Protocols button click
-    }
-
-    @FXML
-    private void handleCampusMap(ActionEvent event) {
-        navigateToCampusMapPage();
-    }
+    private Text emailText;
 
     @FXML
     private void handleHomeClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(homeIcon); // Change size of the clicked icon
+        navigateToMainPage();
         System.out.println("Home icon clicked");
     }
 
@@ -99,7 +62,6 @@ public class MainController {
     private void handleProfileClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(profileIcon); // Change size of the clicked icon
-        navigateToProfilePage();
         System.out.println("Profile icon clicked");
     }
 
@@ -122,11 +84,10 @@ public class MainController {
         profileIcon.setFitWidth(ORIGINAL_SIZE);
         profileIcon.setFitHeight(ORIGINAL_SIZE);
     }
-
     private void navigateToReportPage() {
         try {
             // Close the main stage
-            Stage mainStage = (Stage) greetingText.getScene().getWindow();
+            Stage mainStage = (Stage) reportIcon.getScene().getWindow();
             mainStage.close();
 
             // Load ReportPage.fxml
@@ -143,29 +104,10 @@ public class MainController {
         }
     }
 
-    private void navigateToProfilePage() {
-        try {
-            // Close the main stage
-            Stage mainStage = (Stage) greetingText.getScene().getWindow();
-            mainStage.close();
-
-            // Load ReportPage.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Profile.fxml"));
-            Parent root = loader.load();
-
-            // Create and show the report page stage
-            Stage reportStage = new Stage();
-            reportStage.setScene(new Scene(root));
-            reportStage.setTitle("Profile Page");
-            reportStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     private void navigateToCampusMapPage() {
         try {
             // Close the main stage
-            Stage mainStage = (Stage) greetingText.getScene().getWindow();
+            Stage mainStage = (Stage) mapIcon.getScene().getWindow();
             mainStage.close();
 
             // Load ReportPage.fxml
@@ -182,25 +124,46 @@ public class MainController {
         }
     }
 
-    private void navigateToEmergencyProtocolPage() {
+    private void navigateToMainPage() {
+        try {
+            // Load Main.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Main.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the main page stage
+            Stage mainStage = new Stage();
+            mainStage.setScene(new Scene(root));
+            mainStage.setTitle("Main Page");
+            mainStage.show();
+
+            // Close the current stage (Report.fxml)
+            Stage currentStage = (Stage) homeIcon.getScene().getWindow();
+            currentStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void navigateToProfilePage() {
         try {
             // Close the main stage
-            Stage mainStage = (Stage) greetingText.getScene().getWindow();
+            Stage mainStage = (Stage) profileIcon.getScene().getWindow();
             mainStage.close();
 
             // Load ReportPage.fxml
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Emergency.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Profile.fxml"));
             Parent root = loader.load();
 
             // Create and show the report page stage
             Stage reportStage = new Stage();
             reportStage.setScene(new Scene(root));
-            reportStage.setTitle("Emergency Protocol Page");
+            reportStage.setTitle("Profile Page");
             reportStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-
 }
+
+
