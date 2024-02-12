@@ -54,7 +54,7 @@
 
 .navigation-icons .navicon:hover
 {
-    -fx-effect: dropshadow(three-pass-box, #BDADAD, 7, 0, 0, 0);
+    -fx-opacity: 0.7;
 }
 
 .logout

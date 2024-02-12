@@ -93,5 +93,5 @@
 
 .navigation-icons .navicon:hover
 {
-    -fx-effect: dropshadow(three-pass-box, #000, 7, 0, 0, 0);
+    -fx-opacity: 0.7;
 }
