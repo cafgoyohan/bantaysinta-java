@@ -48,7 +48,7 @@ public class CampusMapController
     private void handleHomeClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(homeIcon); // Change size of the clicked icon
-        navigateToReturnPage();
+        navigateToMainPage();
         System.out.println("Home icon clicked");
     }
 
@@ -56,6 +56,7 @@ public class CampusMapController
     private void handleReportClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(reportIcon); // Change size of the clicked icon
+        navigateToReportPage();
         System.out.println("Report icon clicked");
     }
 
@@ -70,6 +71,7 @@ public class CampusMapController
     private void handleProfileClick(MouseEvent event) {
         resetIconSize(); // Reset size of all icons
         changeIconSize(profileIcon); // Change size of the clicked icon
+        navigateToProfilePage();
         System.out.println("Profile icon clicked");
     }
 
@@ -148,5 +150,65 @@ public class CampusMapController
 
         spFullMap.setHvalue(newScrollX);
         spFullMap.setVvalue(newScrollY);
+    }
+
+    private void navigateToReportPage() {
+        try {
+            // Close the main stage
+            Stage mainStage = (Stage) reportIcon.getScene().getWindow();
+            mainStage.close();
+
+            // Load ReportPage.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Report.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the report page stage
+            Stage reportStage = new Stage();
+            reportStage.setScene(new Scene(root));
+            reportStage.setTitle("Report Page");
+            reportStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void navigateToMainPage() {
+        try {
+            // Load Main.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Main.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the main page stage
+            Stage mainStage = new Stage();
+            mainStage.setScene(new Scene(root));
+            mainStage.setTitle("Main Page");
+            mainStage.show();
+
+            // Close the current stage (Report.fxml)
+            Stage currentStage = (Stage) homeIcon.getScene().getWindow();
+            currentStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void navigateToProfilePage() {
+        try {
+            // Close the main stage
+            Stage mainStage = (Stage) profileIcon.getScene().getWindow();
+            mainStage.close();
+
+            // Load ReportPage.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Profile.fxml"));
+            Parent root = loader.load();
+
+            // Create and show the report page stage
+            Stage reportStage = new Stage();
+            reportStage.setScene(new Scene(root));
+            reportStage.setTitle("Profile Page");
+            reportStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

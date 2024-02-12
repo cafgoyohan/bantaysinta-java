@@ -7,15 +7,20 @@ public class UserProfile {
     private String program;
     private String year;
     private String section;
+    private String email;
+    private String address;
 
-    // Constructor
-    public UserProfile(String firstName, String lastName, String studentNumber, String program, String year, String section) {
+    // Constructor method
+    public UserProfile(String firstName, String lastName, String studentNumber, String program, String year,
+                       String section, String address, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.studentNumber = studentNumber;
         this.program = program;
         this.year = year;
         this.section = section;
+        this.address = address;
+        this.email = email;
     }
 
     // Getters
@@ -43,6 +48,14 @@ public class UserProfile {
         return section;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
     // Setters
     public void setFirstName(String firstName) {
         this.firstName = firstName;
@@ -66,5 +79,13 @@ public class UserProfile {
 
     public void setSection(String section) {
         this.section = section;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

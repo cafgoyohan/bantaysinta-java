@@ -24,10 +24,10 @@ public class VerifyController {
     // JDBC URL, username, and password
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/bantay_sinta_db";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "123456";
+    private static final String PASSWORD = "rootpass";
 
     // SQL statement to insert data into the database
-    private static final String INSERT_SQL = "INSERT INTO reports (subject, location, description, image_path, certification, user_id) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String INSERT_SQL = "INSERT INTO reports (subject, location, description, file_name, image_path, certification, student_number) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     public ImageView homeIcon;
     public ImageView reportIcon;
@@ -37,14 +37,21 @@ public class VerifyController {
     public Label subjectLabel;
     public Label locationLabel;
     public Label descriptionLabel;
-    public ImageView imageView;
+
+    @FXML
+    private ImageView imageView;
+    @FXML
+    private TextField imagePathField;
+    @FXML
+    private Label fileNameLabel;
     @FXML
     private Text greetingText;
 
     @FXML
     private CheckBox certificationCheckbox;
 
-    public void handleBackButtonClick(MouseEvent actionEvent) {
+    @FXML
+    private void handleBackButtonClick(MouseEvent actionEvent) {
         navigateToReturnPage();
     }
 
@@ -124,7 +131,7 @@ public class VerifyController {
         String password = "rootpass";
 
         // SQL query to insert report
-        String sql = "INSERT INTO reports (subject, location, description, image_path, certification, student_number) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO reports (subject, location, description, file_name, image_path, certification, student_number) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (
                 // Establish database connection
@@ -136,9 +143,10 @@ public class VerifyController {
             statement.setString(1, subjectLabel.getText());
             statement.setString(2, locationLabel.getText());
             statement.setString(3, descriptionLabel.getText());
-            statement.setString(4, "imagePath");
-            statement.setBoolean(5, true);
-            statement.setString(6, studentNum);
+            statement.setString(4, fileNameLabel.getText());
+            statement.setString(5, imagePathField.getText());
+            statement.setBoolean(6, true);
+            statement.setString(7, studentNum);
 
             // Execute the query
             int rowsInserted = statement.executeUpdate();
@@ -151,7 +159,8 @@ public class VerifyController {
         }
     }
 
-    public void handleSubmitButtonClick(ActionEvent actionEvent) {
+    @FXML
+    private void handleSubmitButtonClick(ActionEvent actionEvent) {
         // Check if the checkbox is selected
         if (certificationCheckbox.isSelected()) {
             // Perform submission
@@ -195,11 +204,14 @@ public class VerifyController {
         }
     }
 
-    public void displayDetails(String subject, String location, String description, Image image) {
+    public void displayDetails(String subject, String location, String description, Image image, String fileName, String imagePath) {
         // Display the received details
         subjectLabel.setText(subject);
         locationLabel.setText(location);
         descriptionLabel.setText(description);
         imageView.setImage(image);
+        fileNameLabel.setText(fileName); // Assuming fileNameLabel is a Label
+        imagePathField.setText(imagePath); // Assuming imagePathField is a TextField
     }
+
 }

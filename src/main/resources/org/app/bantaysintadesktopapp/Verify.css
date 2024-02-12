@@ -58,6 +58,21 @@
     -fx-text-fill: #888888;
 }
 
+.name-label
+{
+    -fx-text-fill: #810101;
+    -fx-font-size: 8px;
+}
+
+.path-field
+{
+    -fx-text-fill: #888888;
+    -fx-font-size: 8px;
+    -fx-padding: 0px 0px 10px 0px;
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
 .check-box
 {
     -fx-background-color: transparent;
