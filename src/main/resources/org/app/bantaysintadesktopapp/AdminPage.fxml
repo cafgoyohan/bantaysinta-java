@@ -49,19 +49,7 @@
          <BorderPane prefHeight="200.0" prefWidth="200.0">
             <center>
                <ScrollPane hbarPolicy="NEVER" prefHeight="510.0" prefWidth="695.0" style="-fx-background-color: CFCFCF;" BorderPane.alignment="CENTER">
-                  <VBox fx:id="reportBoxContainer" spacing="2" styleClass="report-box-mainvbox">
-                     <FlowPane fx:id="reportBox" prefHeight="0.0" prefWidth="656.0" styleClass="report-box">
-                        <Label styleClass="report-box-label-time" text="Today" />
-                        <VBox alignment="CENTER_LEFT" styleClass="report-box-body-cont">
-                           <Label styleClass="report-box-label-subject" text="Subject" />
-                           <Label styleClass="report-box-label-location" text="Location" />
-                           <Label styleClass="report-box-label-body" text="Body" />
-                        </VBox>
-                        <ImageView fitWidth="75.0" pickOnBounds="true" preserveRatio="true" styleClass="report-box-image">
-                           <Image url="@image/no_image.png" />
-                        </ImageView>
-                     </FlowPane>
-                  </VBox>
+                  <VBox fx:id="reportBoxContainer" spacing="2" styleClass="report-box-mainvbox" />
                </ScrollPane>
             </center>
             <top>
@@ -103,7 +91,7 @@
                                  <Font size="15.0" />
                               </font>
                            </Label>
-                           <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="pageImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@image/no_image.png" />
                               </image>

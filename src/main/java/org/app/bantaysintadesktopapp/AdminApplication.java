@@ -14,7 +14,7 @@ public class AdminApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Load the FXML file
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AdminStart.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("AdminPage.fxml")));
 
         // Set the application icon
         Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("image/logo.png")));
