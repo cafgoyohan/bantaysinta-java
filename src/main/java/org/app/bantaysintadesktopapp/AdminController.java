@@ -36,7 +36,7 @@ public class AdminController
 
     private final String JDBC_URL = "jdbc:mysql://localhost:3306/bantay_sinta_db";
     private final String USERNAME = "root";
-    private final String PASSWORD = "123456";
+    private final String PASSWORD = "rootpass";
 
     public class Report
     {

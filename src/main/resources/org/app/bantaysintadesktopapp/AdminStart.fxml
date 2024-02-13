@@ -3,7 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane prefHeight="600" prefWidth="900" styleClass="main-pane" stylesheets="@AdminStart.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.bantaysintadesktopapp.AdminStartController">
+<BorderPane prefHeight="600" prefWidth="900" styleClass="main-pane" stylesheets="@AdminStart.css"
+            xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.app.bantaysintadesktopapp.AdminStartController">
    <left>
       <VBox prefHeight="600.0" prefWidth="362.0" spacing="10" style="-fx-padding: 330px 0px 0px 100px;">
          <TextField fx:id="emailField" prefHeight="39.0" prefWidth="250.0" promptText="Email" styleClass="field" />

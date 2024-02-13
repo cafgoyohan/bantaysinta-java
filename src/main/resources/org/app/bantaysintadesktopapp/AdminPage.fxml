@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="600" prefWidth="900" stylesheets="@AdminPage.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.bantaysintadesktopapp.AdminController">
+<BorderPane prefHeight="600" prefWidth="900" stylesheets="@adminpage.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.bantaysintadesktopapp.AdminController">
    <!-- Navigation -->
    <left>
       <ScrollPane hbarPolicy="NEVER" prefHeight="600.0" prefWidth="205.0" styleClass="left-pane">
          <VBox alignment="TOP_CENTER" prefHeight="581.0" prefWidth="205.0" style="-fx-padding: 25px 0px 25px 0px;" styleClass="left-vbox">
             <ImageView preserveRatio="true" styleClass="logo">
-               <Image url="@image/logoR.png" />
+               <Image url="@image/logo_white.png" />
                <fitWidth>76.0</fitWidth>
                <fitHeight>113.0</fitHeight>
             </ImageView>
@@ -20,23 +20,23 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="10.0" layoutY="123.0" text="Admin Page" textAlignment="CENTER" textFill="#7b0101" wrapText="true">
+            <Label layoutX="10.0" layoutY="123.0" text="Admin Page" textAlignment="CENTER" textFill="#edd499" wrapText="true">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
             <VBox prefHeight="326.0" prefWidth="205.0" spacing="5" style="-fx-padding: 20px 20px 20px 20px;" styleClass="left-button-vbox">
-               <Button alignment="TOP_LEFT" prefHeight="0.0" prefWidth="185.0" style="-fx-background-color: transparent;" text="Announcements">
+               <Button alignment="TOP_LEFT" prefHeight="0.0" prefWidth="185.0" style="-fx-background-color: transparent;" text="Announcements" textFill="#fafafa">
                   <font>
                      <Font name="System Bold" size="16.0" />
                   </font></Button>
-               <Button alignment="TOP_LEFT" layoutX="20.0" layoutY="30.0" prefHeight="35.0" prefWidth="218.0" style="-fx-background-color: transparent;" text="Reports">
+               <Button alignment="TOP_LEFT" layoutX="20.0" layoutY="30.0" prefHeight="35.0" prefWidth="218.0" style="-fx-background-color: transparent;" text="Reports" textFill="#fafafa">
                   <font>
                      <Font name="System Bold" size="16.0" />
                   </font>
                </Button>
             </VBox>
-            <Button alignment="CENTER" prefHeight="35.0" prefWidth="151.0" style="-fx-background-color: #810101; -fx-background-radius: 25px;" text="Sign Out" textFill="WHITE">
+            <Button alignment="CENTER" prefHeight="35.0" prefWidth="151.0" style="-fx-background-color: transparent; -fx-background-radius: 25px;" styleClass="signout-button" text="Sign Out" textFill="#f4f4f4">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -65,7 +65,7 @@
                </ScrollPane>
             </center>
             <top>
-               <HBox alignment="BOTTOM_LEFT" prefHeight="95.0" prefWidth="695.0" spacing="10" style="-fx-padding: 0px 20px 0px 20px;" BorderPane.alignment="CENTER">
+               <HBox alignment="BOTTOM_LEFT" prefHeight="95.0" prefWidth="695.0" spacing="10" style="-fx-padding: 0px 20px 0px 20px; -fx-background-color: #F4F4F4;" BorderPane.alignment="CENTER">
                   <ImageView fitHeight="62.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
                      <Image url="@image/megaphone.png" />
                   </ImageView>
@@ -116,7 +116,7 @@
             <top>
                <HBox alignment="CENTER_LEFT" prefHeight="95.0" prefWidth="695.0" spacing="10" style="-fx-padding: 40px 20px 0px 20px; -fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
                   <children>
-                     <ImageView fx:id="backButton" onMouseClicked="#handleBackButtonClick" styleClass="back-button" fitHeight="33.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <ImageView fx:id="backButton" fitHeight="33.0" fitWidth="28.0" onMouseClicked="#handleBackButtonClick" pickOnBounds="true" preserveRatio="true" styleClass="back-button">
                         <image>
                            <Image url="@image/back-iconR.png" />
                         </image>

@@ -1,5 +1,26 @@
-.left-button {
+.left-vbox
+{
+    -fx-background-image: url('image/bg_red.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.left-pane
+{
+    -fx-background: transparent;
+}
+
+.left-button
+{
     -fx-background-color: transparent;
+}
+
+.signout-button
+{
+    -fx-border-color: #F4F4F4;
+    -fx-border-width: 3px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
 }
 
 .report-box-mainvbox

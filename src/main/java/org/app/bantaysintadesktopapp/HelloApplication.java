@@ -17,7 +17,8 @@ public class HelloApplication extends Application {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("OpeningPage.fxml")));
 
         // Set the application icon
-        // stage.getIcons().add(new Image("logo.png"));
+        Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("image/logo.png")));
+        stage.getIcons().add(icon);
 
         // Create the scene
         Scene scene = new Scene(root, 331.2, 716.8);
@@ -25,9 +26,6 @@ public class HelloApplication extends Application {
         // Set the scene to the stage
         stage.setScene(scene);
         stage.setTitle("Bantay Sinta"); // Set the window title
-
-        // Set the application icon for the stage
-        //stage.getIcons().add(new Image("image/logo.png"));
 
         stage.show(); // Show the stage
     }
