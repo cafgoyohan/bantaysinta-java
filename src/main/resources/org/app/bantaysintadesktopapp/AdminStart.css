@@ -1,0 +1,39 @@
+.main-pane
+{
+    -fx-background-image: url('image/admin_start.png');
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+}
+
+.field
+{
+    -fx-background-color: #DADADA;
+    -fx-font-size: 13px;
+    -fx-font-family: "Helvetica";
+    -fx-pref-width: 280px;
+    -fx-max-width: 280px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-padding: 10px;
+}
+
+.button
+{
+    -fx-background-color: #810101;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-family: "Helvetica";
+    -fx-font-weight: bold;
+    -fx-padding: 4px 50px 4px 50px;
+    -fx-border-color: #810101;
+    -fx-border-width: 3px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+}
+
+.error-label {
+    -fx-text-fill: red;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-alignment: center;
+}
