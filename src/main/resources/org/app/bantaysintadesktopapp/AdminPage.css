@@ -1,0 +1,71 @@
+.left-button {
+    -fx-background-color: transparent;
+}
+
+.report-box-mainvbox
+{
+    -fx-padding: 10px;
+    -fx-pref-width: 676;
+    -fx-pref-height: 485;
+}
+
+
+.report-box
+{
+    -fx-padding: 3px 20px 3px 20px;
+    -fx-pref-width: 605;
+    -fx-pref-height: 102;
+}
+
+.report-box-label-time
+{
+    -fx-text-fill: #a6a6a6;
+    -fx-font-size: 12px;
+    -fx-pref-width: 64;
+    -fx-pref-height: 34;
+}
+
+.report-box-body-cont
+{
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 0px 10px 0px 10px;
+    -fx-pref-width: 450;
+    -fx-pref-height: 100;
+}
+
+.report-box:hover
+{
+    -fx-opacity: 0.7;
+    -fx-background-color: #E1E1E1;
+}
+
+.report-box-label-subject
+{
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-pref-width: 424;
+    -fx-pref-height: 24;
+}
+
+.report-box-label-location
+{
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-pref-width: 424;
+    -fx-pref-height: 24;
+}
+
+.report-box-label-body
+{
+    -fx-text-fill: black;
+    -fx-font-size: 13px;
+    -fx-pref-width: 424;
+    -fx-pref-height: 24;
+}
+
+.report-box-image
+{
+
+}

@@ -7,7 +7,7 @@ public class UserService {
     // Database connection details
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/bantay_sinta_db";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "rootpass";
+    private static final String PASSWORD = "123456";
 
     // Method to retrieve the user's profile from the database
     public UserProfile getUserProfile(String studentNumber) {

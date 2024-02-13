@@ -32,7 +32,6 @@
                         </ImageView>
 
                         <VBox alignment="CENTER_LEFT" maxHeight="525" maxWidth="320" spacing="10" style="-fx-padding: 10px 10px 20px 20px;">
-
                             <HBox fx:id="annBox1" alignment="CENTER_LEFT" maxHeight="150" maxWidth="280" onMouseClicked="#handlePageClick" spacing="5" styleClass="ann-box">
                                 <Label alignment="center" prefHeight="16.0" prefWidth="50.0" styleClass="ann-time" text="Today" />
                                 <VBox maxWidth="192.0" prefHeight="77.0" prefWidth="192.0">
