@@ -11,7 +11,6 @@
       <ScrollPane hbarPolicy="NEVER" prefHeight="600.0" prefWidth="205.0" styleClass="left-pane">
          <VBox alignment="TOP_CENTER" prefHeight="581.0" prefWidth="205.0" style="-fx-padding: 25px 0px 25px 0px;" styleClass="left-vbox">
             <ImageView preserveRatio="true" styleClass="logo">
-               <Image url="@image/logoR.png" />
                <fitWidth>76.0</fitWidth>
                <fitHeight>113.0</fitHeight>
             </ImageView>
@@ -49,19 +48,7 @@
          <BorderPane prefHeight="200.0" prefWidth="200.0">
             <center>
                <ScrollPane hbarPolicy="NEVER" prefHeight="510.0" prefWidth="695.0" style="-fx-background-color: CFCFCF;" BorderPane.alignment="CENTER">
-                  <VBox fx:id="reportBoxContainer" spacing="2" styleClass="report-box-mainvbox">
-                     <FlowPane fx:id="reportBox" prefHeight="0.0" prefWidth="656.0" styleClass="report-box">
-                        <Label styleClass="report-box-label-time" text="Today" />
-                        <VBox alignment="CENTER_LEFT" styleClass="report-box-body-cont">
-                           <Label styleClass="report-box-label-subject" text="Subject" />
-                           <Label styleClass="report-box-label-location" text="Location" />
-                           <Label styleClass="report-box-label-body" text="Body" />
-                        </VBox>
-                        <ImageView fitWidth="75.0" pickOnBounds="true" preserveRatio="true" styleClass="report-box-image">
-                           <Image url="@image/no_image.png" />
-                        </ImageView>
-                     </FlowPane>
-                  </VBox>
+                  <VBox fx:id="reportBoxContainer" spacing="2" styleClass="report-box-mainvbox" />
                </ScrollPane>
             </center>
             <top>
@@ -103,7 +90,7 @@
                                  <Font size="15.0" />
                               </font>
                            </Label>
-                           <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <ImageView fx:id="pageImage" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                               <image>
                                  <Image url="@image/no_image.png" />
                               </image>
@@ -116,7 +103,7 @@
             <top>
                <HBox alignment="CENTER_LEFT" prefHeight="95.0" prefWidth="695.0" spacing="10" style="-fx-padding: 40px 20px 0px 20px; -fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
                   <children>
-                     <ImageView fx:id="backButton" onMouseClicked="#handleBackButtonClick" styleClass="back-button" fitHeight="33.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                     <ImageView fx:id="backButton" fitHeight="33.0" fitWidth="28.0" onMouseClicked="#handleBackButtonClick" pickOnBounds="true" preserveRatio="true" styleClass="back-button">
                         <image>
                            <Image url="@image/back-iconR.png" />
                         </image>
