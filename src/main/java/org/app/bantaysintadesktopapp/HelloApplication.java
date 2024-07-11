@@ -28,6 +28,7 @@ public class HelloApplication extends Application {
         stage.setTitle("Bantay Sinta"); // Set the window title
 
         stage.show(); // Show the stage
+        //bruh
     }
 
     public static void main(String[] args) {
