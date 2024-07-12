@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="600" prefWidth="900" stylesheets="@adminpage.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.bantaysintadesktopapp.AdminController">
+<BorderPane prefHeight="600" prefWidth="900" stylesheets="@AdminPage.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.app.bantaysintadesktopapp.AdminController">
    <!-- Navigation -->
    <left>
       <ScrollPane hbarPolicy="NEVER" prefHeight="600.0" prefWidth="205.0" styleClass="left-pane">

@@ -271,7 +271,7 @@ public class VerifyController {
         // Database connection parameters
         String url = "jdbc:mysql://localhost:3306/bantay_sinta_db";
         String username = "root";
-        String password = "123456";
+        String password = "rootpass";
 
         // SQL query to insert report
         String sql = "INSERT INTO reports (subject, location, description, file_name, image_path, certification, student_number) VALUES (?, ?, ?, ?, ?, ?, ?)";
